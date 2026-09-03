@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stundenzettel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<style>
+  :root{
+    --paper: #f6f4ee;
+    --surface: #ffffff;
+    --ink: #1c1f26;
+    --ink-soft: #5b5f6b;
+    --rule: #d9d3c4;
+    --rule-strong: #b9b2a0;
+    --accent: #2b4570;
+    --accent-soft: #e4e9f2;
+    --plus: #3a7856;
+    --plus-bg: #e7f1eb;
+    --minus: #b0472e;
+    --minus-bg: #f6e6e1;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin:0;
+    padding:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body{
+    min-height:100vh;
+    padding: 32px 20px 80px;
+  }
+
+  .app{
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  header.masthead{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 18px;
+    margin-bottom: 6px;
+  }
+
+  header.masthead .title-block h1{
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  header.masthead .meta{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  header.masthead .header-actions{
+    display:flex;
+    gap: 10px;
+  }
+
+  nav.tabs{
+    display:flex;
+    gap: 2px;
+    margin: 28px 0 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  nav.tabs button{
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    background: none;
+    border: none;
+    padding: 10px 4px;
+    margin-right: 28px;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+  }
+
+  nav.tabs button.active{
+    color: var(--ink);
+    border-bottom: 2px solid var(--accent);
+  }
+
+  section.panel{ display:none; }
+  section.panel.active{ display:block; }
+
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 22px;
+  }
+
+  .card h2{
+    font-size: 16px;
+    margin: 0 0 4px;
+  }
+  .card .card-sub{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+
+  .entry-form{
+    display:grid;
+    grid-template-columns: 1.1fr 1.6fr 0.9fr 0.9fr auto;
+    gap: 14px;
+    align-items: end;
+  }
+
+  .settings-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 720px){
+    .entry-form{ grid-template-columns: 1fr 1fr; }
+    .settings-grid{ grid-template-columns: 1fr; }
+  }
+
+  .field label{
+    display:block;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+
+  .field input{
+    width: 100%;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    padding: 9px 10px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 4px;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .field input:focus{
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  button.primary{
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 18px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  button.primary:hover{ background: #223a5e; }
+
+  button.ghost{
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    background: var(--surface);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 9px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  button.ghost:hover{ background: var(--accent-soft); }
+
+  .form-error{
+    font-size: 13px;
+    color: var(--minus);
+    margin-top: 10px;
+    display:none;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13.5px;
+  }
+
+  thead th{
+    text-align: left;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding: 0 10px 10px;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  tbody td{
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: middle;
+  }
+
+  tbody tr.week-start td{ border-top: 2px solid var(--rule-strong); }
+
+  td.num{ text-align: right; }
+  td.total-cell{
+    background: var(--accent-soft);
+    font-weight: 600;
+    text-align: right;
+  }
+
+  td.job-cell{
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+
+  .del-btn{
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 2px 6px;
+  }
+  .del-btn:hover{ color: var(--minus); }
+
+  .empty-state{
+    padding: 30px 10px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+
+  .balance-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .balance-card .label{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+
+  .balance-card .value{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .value.plus{ color: var(--plus); }
+  .value.minus{ color: var(--minus); }
+
+  .pill{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .pill.plus{ background: var(--plus-bg); color: var(--plus); }
+  .pill.minus{ background: var(--minus-bg); color: var(--minus); }
+  .pill.zero{ background: var(--accent-soft); color: var(--accent); }
+
+  .checkbox-row{
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+  }
+
+  .status-line{
+    font-size: 13px;
+    margin-top: 12px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    display:none;
+  }
+  .status-line.ok{ display:block; background: var(--plus-bg); color: var(--plus); }
+  .status-line.error{ display:block; background: var(--minus-bg); color: var(--minus); }
+
+  .btn-row{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .divider{
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 22px 0;
+  }
+
+  .warn-box{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1px dashed var(--rule-strong);
+    border-radius: 4px;
+    padding: 10px 12px;
+    line-height: 1.6;
+    margin-top: 14px;
+  }
+
+  footer.note{
+    margin-top: 30px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="masthead">
+    <div class="title-block">
+      <h1>Stundenzettel</h1>
+      <div class="meta" id="todayLabel"></div>
+    </div>
+    <div class="header-actions">
+      <button class="ghost" id="pdfExportBtn">PDF exportieren</button>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="zeit">Zeiterfassung</button>
+    <button class="tab-btn" data-tab="ueberstunden">Überstunden</button>
+    <button class="tab-btn" data-tab="daten">Daten &amp; Sicherung</button>
+  </nav>
+
+  <!-- TAB 1: Zeiterfassung -->
+  <section class="panel active" id="panel-zeit">
+
+    <div class="card">
+      <form class="entry-form" id="entryForm">
+        <div class="field">
+          <label for="f-datum">Datum</label>
+          <input type="date" id="f-datum" required>
+        </div>
+        <div class="field">
+          <label for="f-auftrag">Auftrag</label>
+          <input type="text" id="f-auftrag" placeholder="z. B. Katalog Müller" required>
+        </div>
+        <div class="field">
+          <label for="f-start">Startzeit</label>
+          <input type="time" id="f-start" required>
+        </div>
+        <div class="field">
+          <label for="f-ende">Endzeit</label>
+          <input type="time" id="f-ende" required>
+        </div>
+        <button type="submit" class="primary">Eintragen</button>
+      </form>
+      <div class="form-error" id="formError">Endzeit muss nach der Startzeit liegen.</div>
+    </div>
+
+    <div class="card" style="padding:0; overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Auftrag</th>
+            <th>Start</th>
+            <th>Ende</th>
+            <th class="num">Zeit</th>
+            <th class="num">Tag gesamt</th>
+            <th class="num">Woche gesamt</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="entryTableBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState">Noch keine Einträge. Trag oben deine erste Arbeitszeit ein.</div>
+    </div>
+  </section>
+
+  <!-- TAB 2: Überstunden -->
+  <section class="panel" id="panel-ueberstunden">
+
+    <div class="card balance-card">
+      <div>
+        <div class="label">Aktueller Stand Überstundenkonto</div>
+        <div class="value" id="balanceValue">0:00 h</div>
+      </div>
+      <div class="label" id="balanceContext">Basis: 40:00 h / Woche</div>
+    </div>
+
+    <div class="card" style="padding:0; overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>KW</th>
+            <th>Zeitraum</th>
+            <th class="num">Wochenarbeitszeit</th>
+            <th class="num">Differenz zu 40 h</th>
+            <th class="num">Saldo kumuliert</th>
+          </tr>
+        </thead>
+        <tbody id="weekTableBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyStateWeeks">Sobald Zeiten erfasst sind, erscheint hier deine Wochenübersicht.</div>
+    </div>
+  </section>
+
+  <!-- TAB 3: Daten & Sicherung -->
+  <section class="panel" id="panel-daten">
+
+    <div class="card">
+      <h2>Lokale Sicherung (JSON-Datei)</h2>
+      <p class="card-sub">Funktioniert immer, ganz ohne Einrichtung. Gut als schnelles Backup vor dem Löschen von Browserdaten.</p>
+      <div class="btn-row">
+        <button class="ghost" id="exportJsonBtn">Als JSON exportieren</button>
+        <button class="ghost" id="importJsonBtn">JSON importieren</button>
+        <input type="file" id="importJsonInput" accept="application/json" style="display:none;">
+      </div>
+      <div class="warn-box">Der Import fügt Einträge aus der Datei zu deinen aktuellen Daten hinzu (bereits vorhandene Einträge werden nicht doppelt angelegt). Bestehende Daten werden dabei nicht gelöscht.</div>
+      <div class="status-line" id="jsonStatus"></div>
+    </div>
+
+    <div class="card">
+      <h2>Automatische Sicherung über GitHub</h2>
+      <p class="card-sub">Speichert deine Daten als Datei in deinem GitHub-Repo — dadurch bleiben sie erhalten, auch wenn du Browser oder Gerät wechselst oder Browserdaten löschst.</p>
+
+      <div class="settings-grid">
+        <div class="field">
+          <label for="gh-owner">GitHub-Benutzername</label>
+          <input type="text" id="gh-owner" placeholder="z. B. michael123">
+        </div>
+        <div class="field">
+          <label for="gh-repo">Repository-Name</label>
+          <input type="text" id="gh-repo" placeholder="z. B. stundenzettel">
+        </div>
+        <div class="field">
+          <label for="gh-branch">Branch</label>
+          <input type="text" id="gh-branch" placeholder="main" value="main">
+        </div>
+        <div class="field">
+          <label for="gh-path">Dateipfad im Repo</label>
+          <input type="text" id="gh-path" placeholder="data/stundenzettel.json" value="data/stundenzettel.json">
+        </div>
+      </div>
+      <div class="field" style="margin-top:14px;">
+        <label for="gh-token">Personal Access Token</label>
+        <input type="password" id="gh-token" placeholder="ghp_...">
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="gh-autosync">
+        <label for="gh-autosync">Nach jeder Änderung automatisch auf GitHub sichern</label>
+      </div>
+
+      <div class="btn-row">
+        <button class="primary" id="ghSaveConfigBtn">Verbindung speichern</button>
+        <button class="ghost" id="ghPushBtn">Jetzt auf GitHub sichern</button>
+        <button class="ghost" id="ghPullBtn">Jetzt von GitHub laden</button>
+      </div>
+      <div class="status-line" id="ghStatus"></div>
+
+      <div class="warn-box">
+        So richtest du das ein: Erstelle auf GitHub unter <em>Settings → Developer settings → Personal access tokens → Fine-grained tokens</em> einen Token, der nur für dieses eine Repository gilt, mit der Berechtigung „Contents: Read and write". Der Token wird ausschließlich lokal in deinem Browser gespeichert und direkt an GitHub gesendet — aber im Klartext im Browser abgelegt. Nutze ihn daher nicht auf gemeinsam verwendeten Geräten, und widerrufe ihn jederzeit über GitHub, falls nötig.
+      </div>
+    </div>
+  </section>
+
+  <footer class="note">
+    Einträge werden zusätzlich lokal im Browser gespeichert (localStorage) und sofort angezeigt.
+    Für dauerhaften, geräteübergreifenden Schutz nutze die JSON-Sicherung oder die GitHub-Sicherung im Reiter „Daten &amp; Sicherung".
+    Wochenbasis: Montag–Sonntag, Regelarbeitszeit 40 Std./Woche.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  const STORAGE_KEY = 'stundenzettel_entries_v1';
+  const GH_CONFIG_KEY = 'stundenzettel_github_cfg_v1';
+  const WEEK_BASE_MIN = 40 * 60;
+
+  let entries = loadEntries();
+  let ghConfig = loadGhConfig();
+
+  // ---------- Persistence: entries ----------
+  function loadEntries(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    }catch(e){ return []; }
+  }
+  function saveEntries(triggerAutosync){
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+    if(triggerAutosync && ghConfig && ghConfig.autosync && ghConfig.token && ghConfig.owner && ghConfig.repo){
+      pushToGithub(true);
+    }
+  }
+
+  // ---------- Persistence: GitHub config ----------
+  function loadGhConfig(){
+    try{
+      const raw = localStorage.getItem(GH_CONFIG_KEY);
+      return raw ? JSON.parse(raw) : null;
+    }catch(e){ return null; }
+  }
+  function saveGhConfig(cfg){
+    localStorage.setItem(GH_CONFIG_KEY, JSON.stringify(cfg));
+    ghConfig = cfg;
+  }
+
+  // ---------- Time helpers ----------
+  function toMinutes(hhmm){
+    const [h,m] = hhmm.split(':').map(Number);
+    return h*60+m;
+  }
+  function durationMinutes(start, ende){
+    let diff = toMinutes(ende) - toMinutes(start);
+    if(diff < 0) diff += 24*60;
+    return diff;
+  }
+  function fmtDur(min){
+    const sign = min < 0 ? '-' : '';
+    const abs = Math.round(Math.abs(min));
+    const h = Math.floor(abs/60);
+    const m = abs % 60;
+    return `${sign}${h}:${String(m).padStart(2,'0')} h`;
+  }
+  function fmtDate(iso){
+    const d = new Date(iso + 'T00:00:00');
+    return d.toLocaleDateString('de-AT', { day:'2-digit', month:'2-digit', year:'numeric' });
+  }
+  function fmtDateShort(d){
+    return d.toLocaleDateString('de-AT', { day:'2-digit', month:'2-digit' });
+  }
+
+  function isoWeekInfo(dateStr){
+    const date = new Date(dateStr + 'T00:00:00');
+    const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+    const dayNum = (d.getUTCDay() + 6) % 7;
+    d.setUTCDate(d.getUTCDate() - dayNum + 3);
+    const firstThursday = new Date(Date.UTC(d.getUTCFullYear(), 0, 4));
+    const week = 1 + Math.round(((d - firstThursday) / 86400000 - 3 + ((firstThursday.getUTCDay() + 6) % 7)) / 7);
+    const monday = new Date(date);
+    const localDayNum = (date.getDay() + 6) % 7;
+    monday.setDate(date.getDate() - localDayNum);
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    return { year: d.getUTCFullYear(), week, monday, sunday, key: `${d.getUTCFullYear()}-W${String(week).padStart(2,'0')}` };
+  }
+
+  // ---------- Derived data ----------
+  function computeGrouped(){
+    const sorted = [...entries].sort((a,b) => {
+      if(a.datum !== b.datum) return a.datum.localeCompare(b.datum);
+      return a.start.localeCompare(b.start);
+    });
+
+    const dayTotals = {};
+    sorted.forEach(e => {
+      e.minutes = durationMinutes(e.start, e.ende);
+      dayTotals[e.datum] = (dayTotals[e.datum] || 0) + e.minutes;
+    });
+
+    const weekTotals = {};
+    Object.keys(dayTotals).forEach(datum => {
+      const wi = isoWeekInfo(datum);
+      if(!weekTotals[wi.key]) weekTotals[wi.key] = { minutes: 0, year: wi.year, week: wi.week, monday: wi.monday, sunday: wi.sunday };
+      weekTotals[wi.key].minutes += dayTotals[datum];
+    });
+
+    return { sorted, dayTotals, weekTotals };
+  }
+
+  function computeWeekRows(){
+    const { weekTotals } = computeGrouped();
+    const weekKeys = Object.keys(weekTotals).sort();
+    let cumulative = 0;
+    return weekKeys.map(key => {
+      const w = weekTotals[key];
+      const diff = w.minutes - WEEK_BASE_MIN;
+      cumulative += diff;
+      return { ...w, diff, cumulative };
+    });
+  }
+
+  // ---------- Rendering: Tab 1 ----------
+  function renderEntryTable(){
+    const { sorted, dayTotals, weekTotals } = computeGrouped();
+    const body = document.getElementById('entryTableBody');
+    const empty = document.getElementById('emptyState');
+    body.innerHTML = '';
+
+    if(sorted.length === 0){
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+
+    const byDateDesc = [...sorted].sort((a,b) => {
+      if(a.datum !== b.datum) return b.datum.localeCompare(a.datum);
+      return a.start.localeCompare(b.start);
+    });
+
+    let lastDate = null, lastWeekKey = null;
+    byDateDesc.forEach(e => {
+      const wi = isoWeekInfo(e.datum);
+      const isNewDayGroup = e.datum !== lastDate;
+      const isNewWeekGroup = wi.key !== lastWeekKey;
+      lastDate = e.datum;
+      lastWeekKey = wi.key;
+
+      const tr = document.createElement('tr');
+      if(isNewWeekGroup) tr.classList.add('week-start');
+
+      tr.innerHTML = `
+        <td>${isNewDayGroup ? fmtDate(e.datum) : ''}</td>
+        <td class="job-cell">${escapeHtml(e.auftrag)}</td>
+        <td>${e.start}</td>
+        <td>${e.ende}</td>
+        <td class="num">${fmtDur(e.minutes)}</td>
+        <td class="num total-cell">${isNewDayGroup ? fmtDur(dayTotals[e.datum]) : ''}</td>
+        <td class="num total-cell">${isNewDayGroup ? fmtDur(weekTotals[wi.key].minutes) : ''}</td>
+        <td><button class="del-btn" title="Eintrag löschen" data-id="${e.id}">✕</button></td>
+      `;
+      body.appendChild(tr);
+    });
+
+    body.querySelectorAll('.del-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        entries = entries.filter(e => e.id !== btn.dataset.id);
+        saveEntries(true);
+        renderAll();
+      });
+    });
+  }
+
+  // ---------- Rendering: Tab 2 ----------
+  function renderWeekTable(){
+    const rows = computeWeekRows();
+    const body = document.getElementById('weekTableBody');
+    const empty = document.getElementById('emptyStateWeeks');
+    body.innerHTML = '';
+
+    if(rows.length === 0){
+      empty.style.display = 'block';
+      document.getElementById('balanceValue').textContent = fmtDur(0);
+      document.getElementById('balanceValue').className = 'value';
+      return;
+    }
+    empty.style.display = 'none';
+
+    const rowsDesc = [...rows].reverse();
+    rowsDesc.forEach(row => {
+      const tr = document.createElement('tr');
+      const diffPillClass = row.diff > 0 ? 'plus' : (row.diff < 0 ? 'minus' : 'zero');
+      const cumPillClass = row.cumulative > 0 ? 'plus' : (row.cumulative < 0 ? 'minus' : 'zero');
+      tr.innerHTML = `
+        <td>KW ${row.week} / ${row.year}</td>
+        <td>${fmtDateShort(row.monday)} – ${fmtDateShort(row.sunday)}</td>
+        <td class="num">${fmtDur(row.minutes)}</td>
+        <td class="num"><span class="pill ${diffPillClass}">${row.diff >= 0 ? '+' : ''}${fmtDur(row.diff)}</span></td>
+        <td class="num"><span class="pill ${cumPillClass}">${row.cumulative >= 0 ? '+' : ''}${fmtDur(row.cumulative)}</span></td>
+      `;
+      body.appendChild(tr);
+    });
+
+    const cumulative = rows[rows.length-1].cumulative;
+    const balanceEl = document.getElementById('balanceValue');
+    balanceEl.textContent = (cumulative >= 0 ? '+' : '') + fmtDur(cumulative);
+    balanceEl.className = 'value ' + (cumulative > 0 ? 'plus' : (cumulative < 0 ? 'minus' : ''));
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function renderAll(){
+    renderEntryTable();
+    renderWeekTable();
+  }
+
+  // ---------- Form handling ----------
+  document.getElementById('entryForm').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    const datum = document.getElementById('f-datum').value;
+    const auftrag = document.getElementById('f-auftrag').value.trim();
+    const start = document.getElementById('f-start').value;
+    const ende = document.getElementById('f-ende').value;
+    const errorEl = document.getElementById('formError');
+
+    if(!datum || !auftrag || !start || !ende){ return; }
+    if(toMinutes(ende) === toMinutes(start)){
+      errorEl.textContent = 'Start- und Endzeit dürfen nicht identisch sein.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    errorEl.style.display = 'none';
+
+    entries.push({
+      id: 'e' + Date.now() + Math.random().toString(36).slice(2,7),
+      datum, auftrag, start, ende
+    });
+    saveEntries(true);
+    renderAll();
+    this.reset();
+    document.getElementById('f-datum').value = datum;
+    document.getElementById('f-auftrag').focus();
+  });
+
+  // ---------- Tabs ----------
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // ---------- JSON Export / Import ----------
+  function setStatus(elId, kind, msg){
+    const el = document.getElementById(elId);
+    el.textContent = msg;
+    el.className = 'status-line ' + kind;
+  }
+
+  document.getElementById('exportJsonBtn').addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify(entries, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'stundenzettel-backup-' + new Date().toISOString().slice(0,10) + '.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    setStatus('jsonStatus', 'ok', 'Backup-Datei wurde heruntergeladen.');
+  });
+
+  document.getElementById('importJsonBtn').addEventListener('click', () => {
+    document.getElementById('importJsonInput').click();
+  });
+
+  document.getElementById('importJsonInput').addEventListener('change', function(ev){
+    const file = ev.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = function(){
+      try{
+        const imported = JSON.parse(reader.result);
+        if(!Array.isArray(imported)) throw new Error('Ungültiges Format');
+        const existingIds = new Set(entries.map(e => e.id));
+        let added = 0;
+        imported.forEach(e => {
+          if(e && e.id && !existingIds.has(e.id)){
+            entries.push(e);
+            existingIds.add(e.id);
+            added++;
+          }
+        });
+        saveEntries(true);
+        renderAll();
+        setStatus('jsonStatus', 'ok', added + ' Einträge übernommen.');
+      }catch(err){
+        setStatus('jsonStatus', 'error', 'Import fehlgeschlagen: Datei ist kein gültiges Backup.');
+      }
+      ev.target.value = '';
+    };
+    reader.readAsText(file);
+  });
+
+  // ---------- GitHub Sync ----------
+  function b64EncodeUnicode(str){
+    return btoa(unescape(encodeURIComponent(str)));
+  }
+  function b64DecodeUnicode(str){
+    return decodeURIComponent(escape(atob(str)));
+  }
+
+  function readGhFormConfig(){
+    return {
+      owner: document.getElementById('gh-owner').value.trim(),
+      repo: document.getElementById('gh-repo').value.trim(),
+      branch: document.getElementById('gh-branch').value.trim() || 'main',
+      path: document.getElementById('gh-path').value.trim() || 'data/stundenzettel.json',
+      token: document.getElementById('gh-token').value.trim(),
+      autosync: document.getElementById('gh-autosync').checked
+    };
+  }
+
+  function fillGhForm(cfg){
+    if(!cfg) return;
+    document.getElementById('gh-owner').value = cfg.owner || '';
+    document.getElementById('gh-repo').value = cfg.repo || '';
+    document.getElementById('gh-branch').value = cfg.branch || 'main';
+    document.getElementById('gh-path').value = cfg.path || 'data/stundenzettel.json';
+    document.getElementById('gh-token').value = cfg.token || '';
+    document.getElementById('gh-autosync').checked = !!cfg.autosync;
+  }
+
+  document.getElementById('ghSaveConfigBtn').addEventListener('click', () => {
+    const cfg = readGhFormConfig();
+    if(!cfg.owner || !cfg.repo || !cfg.token){
+      setStatus('ghStatus', 'error', 'Bitte Benutzername, Repository und Token angeben.');
+      return;
+    }
+    saveGhConfig(cfg);
+    setStatus('ghStatus', 'ok', 'Verbindung gespeichert.');
+  });
+
+  async function fetchRemoteFile(cfg){
+    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path}?ref=${encodeURIComponent(cfg.branch)}`;
+    const res = await fetch(url, {
+      headers: { 'Authorization': 'Bearer ' + cfg.token, 'Accept': 'application/vnd.github+json' }
+    });
+    if(res.status === 404) return null;
+    if(!res.ok) throw new Error('Status ' + res.status);
+    const json = await res.json();
+    const content = b64DecodeUnicode(json.content.replace(/\n/g, ''));
+    return { sha: json.sha, data: JSON.parse(content) };
+  }
+
+  async function pushRemoteFile(cfg, dataObj, sha){
+    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path}`;
+    const body = {
+      message: 'Stundenzettel-Update ' + new Date().toISOString(),
+      content: b64EncodeUnicode(JSON.stringify(dataObj, null, 2)),
+      branch: cfg.branch
+    };
+    if(sha) body.sha = sha;
+    const res = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'Bearer ' + cfg.token,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    if(!res.ok){
+      const errJson = await res.json().catch(() => ({}));
+      throw new Error('Status ' + res.status + (errJson.message ? ' – ' + errJson.message : ''));
+    }
+    return await res.json();
+  }
+
+  async function pushToGithub(silent){
+    const cfg = ghConfig || readGhFormConfig();
+    if(!cfg.token || !cfg.owner || !cfg.repo){
+      if(!silent) setStatus('ghStatus', 'error', 'Bitte zuerst Verbindung speichern.');
+      return;
+    }
+    try{
+      if(!silent) setStatus('ghStatus', 'ok', 'Sichere auf GitHub …');
+      const remote = await fetchRemoteFile(cfg);
+      await pushRemoteFile(cfg, entries, remote ? remote.sha : undefined);
+      setStatus('ghStatus', 'ok', 'Gesichert am ' + new Date().toLocaleString('de-AT'));
+    }catch(err){
+      setStatus('ghStatus', 'error', 'Sicherung fehlgeschlagen: ' + err.message);
+    }
+  }
+
+  async function pullFromGithub(){
+    const cfg = ghConfig || readGhFormConfig();
+    if(!cfg.token || !cfg.owner || !cfg.repo){
+      setStatus('ghStatus', 'error', 'Bitte zuerst Verbindung speichern.');
+      return;
+    }
+    try{
+      setStatus('ghStatus', 'ok', 'Lade von GitHub …');
+      const remote = await fetchRemoteFile(cfg);
+      if(!remote){
+        setStatus('ghStatus', 'error', 'Noch keine Sicherung in diesem Repo gefunden. Zuerst „Jetzt auf GitHub sichern" verwenden.');
+        return;
+      }
+      if(!Array.isArray(remote.data)) throw new Error('Datei enthält kein gültiges Format.');
+      const existingIds = new Set(entries.map(e => e.id));
+      let added = 0;
+      remote.data.forEach(e => {
+        if(e && e.id && !existingIds.has(e.id)){
+          entries.push(e);
+          existingIds.add(e.id);
+          added++;
+        }
+      });
+      saveEntries(false);
+      renderAll();
+      setStatus('ghStatus', 'ok', 'Geladen: ' + added + ' neue Einträge übernommen.');
+    }catch(err){
+      setStatus('ghStatus', 'error', 'Laden fehlgeschlagen: ' + err.message);
+    }
+  }
+
+  document.getElementById('ghPushBtn').addEventListener('click', () => pushToGithub(false));
+  document.getElementById('ghPullBtn').addEventListener('click', () => pullFromGithub());
+
+  // ---------- PDF Export ----------
+  document.getElementById('pdfExportBtn').addEventListener('click', () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+    const todayStr = new Date().toLocaleDateString('de-AT');
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    doc.text('Stundenzettel', 40, 42);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.text('Erstellt am ' + todayStr, 40, 58);
+
+    const { sorted, dayTotals, weekTotals } = computeGrouped();
+    let lastDate = null;
+    const entryRows = sorted.map(e => {
+      const wi = isoWeekInfo(e.datum);
+      const isNewDay = e.datum !== lastDate;
+      lastDate = e.datum;
+      return [
+        isNewDay ? fmtDate(e.datum) : '',
+        e.auftrag,
+        e.start,
+        e.ende,
+        fmtDur(e.minutes),
+        isNewDay ? fmtDur(dayTotals[e.datum]) : '',
+        isNewDay ? fmtDur(weekTotals[wi.key].minutes) : ''
+      ];
+    });
+
+    doc.autoTable({
+      startY: 72,
+      head: [['Datum','Auftrag','Start','Ende','Zeit','Tag gesamt','Woche gesamt']],
+      body: entryRows.length ? entryRows : [['–','–','–','–','–','–','–']],
+      styles: { font: 'helvetica', fontSize: 8.5, cellPadding: 4 },
+      headStyles: { fillColor: [43,69,112], textColor: 255 },
+      alternateRowStyles: { fillColor: [246,244,238] }
+    });
+
+    const weekRows = computeWeekRows();
+    let y2 = doc.lastAutoTable.finalY + 26;
+    if(y2 > 720){ doc.addPage(); y2 = 50; }
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(13);
+    doc.text('Überstundenkonto', 40, y2);
+    y2 += 8;
+
+    const weekTableRows = weekRows.slice().reverse().map(r => [
+      'KW ' + r.week + ' / ' + r.year,
+      fmtDateShort(r.monday) + ' – ' + fmtDateShort(r.sunday),
+      fmtDur(r.minutes),
+      (r.diff >= 0 ? '+' : '') + fmtDur(r.diff),
+      (r.cumulative >= 0 ? '+' : '') + fmtDur(r.cumulative)
+    ]);
+
+    doc.autoTable({
+      startY: y2 + 8,
+      head: [['KW','Zeitraum','Wochenarbeitszeit','Differenz zu 40h','Saldo kumuliert']],
+      body: weekTableRows.length ? weekTableRows : [['–','–','–','–','–']],
+      styles: { font: 'helvetica', fontSize: 8.5, cellPadding: 4 },
+      headStyles: { fillColor: [43,69,112], textColor: 255 },
+      alternateRowStyles: { fillColor: [246,244,238] }
+    });
+
+    const finalCumulative = weekRows.length ? weekRows[weekRows.length-1].cumulative : 0;
+    let y3 = doc.lastAutoTable.finalY + 24;
+    if(y3 > 780){ doc.addPage(); y3 = 50; }
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(12);
+    doc.text('Aktueller Stand Überstundenkonto: ' + (finalCumulative >= 0 ? '+' : '') + fmtDur(finalCumulative), 40, y3);
+
+    doc.save('stundenzettel_' + new Date().toISOString().slice(0,10) + '.pdf');
+  });
+
+  // ---------- Init ----------
+  document.getElementById('f-datum').value = new Date().toISOString().slice(0,10);
+  document.getElementById('todayLabel').textContent = new Date().toLocaleDateString('de-AT', { weekday:'long', day:'2-digit', month:'2-digit', year:'numeric' });
+  fillGhForm(ghConfig);
+  renderAll();
+})();
+</script>
+</body>
+</html>
