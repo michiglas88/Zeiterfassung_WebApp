@@ -214,5 +214,45 @@
     "start": "07:30",
     "ende": "08:00",
     "minutes": 30
+  },
+  {
+    "id": "e1788438462443jvr53",
+    "datum": "2026-08-24",
+    "auftrag": "INTERN",
+    "start": "08:00",
+    "ende": "08:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788438477890jeq0f",
+    "datum": "2026-08-24",
+    "auftrag": "046934",
+    "start": "08:15",
+    "ende": "14:15",
+    "minutes": 360
+  },
+  {
+    "id": "e1788438498595m3bwa",
+    "datum": "2026-08-24",
+    "auftrag": "INTERT",
+    "start": "14:15",
+    "ende": "14:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1788438505985mhc0d",
+    "datum": "2026-08-24",
+    "auftrag": "INTERT",
+    "start": "14:30",
+    "ende": "15:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788438524545c514o",
+    "datum": "2026-08-24",
+    "auftrag": "046934",
+    "start": "15:00",
+    "ende": "15:15",
+    "minutes": 15
   }
 ]
