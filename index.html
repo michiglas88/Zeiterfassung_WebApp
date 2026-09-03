@@ -870,7 +870,30 @@
     return await res.json();
   }
 
+  let syncBusy = false;
+  let syncQueued = false;
+
   async function pushToGithub(silent){
+    // Läuft bereits eine Sicherung, diese zu Ende führen lassen und danach
+    // genau einen weiteren Durchlauf mit dem aktuellen Stand anhängen,
+    // statt parallel loszulaufen (das verursacht die 409-Konflikte).
+    if(syncBusy){
+      syncQueued = true;
+      return;
+    }
+    syncBusy = true;
+    try{
+      await doPushToGithub(silent);
+    }finally{
+      syncBusy = false;
+      if(syncQueued){
+        syncQueued = false;
+        pushToGithub(true);
+      }
+    }
+  }
+
+  async function doPushToGithub(silent, isRetry){
     const cfg = ghConfig || readGhFormConfig();
     if(!cfg.token || !cfg.owner || !cfg.repo){
       if(!silent) setStatus('ghStatus', 'error', 'Bitte zuerst Verbindung speichern.');
@@ -882,6 +905,12 @@
       await pushRemoteFile(cfg, entries, remote ? remote.sha : undefined);
       setStatus('ghStatus', 'ok', 'Gesichert am ' + new Date().toLocaleString('de-AT'));
     }catch(err){
+      // Bei einem Versions-Konflikt (409) einmal automatisch mit der
+      // aktuellen Version erneut versuchen, bevor ein Fehler gemeldet wird.
+      if(!isRetry && err.message.indexOf('409') !== -1){
+        await doPushToGithub(silent, true);
+        return;
+      }
       setStatus('ghStatus', 'error', 'Sicherung fehlgeschlagen: ' + err.message);
     }
   }
