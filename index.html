@@ -835,9 +835,14 @@
   });
 
   async function fetchRemoteFile(cfg){
-    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path}?ref=${encodeURIComponent(cfg.branch)}`;
+    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path}?ref=${encodeURIComponent(cfg.branch)}&_=${Date.now()}`;
     const res = await fetch(url, {
-      headers: { 'Authorization': 'Bearer ' + cfg.token, 'Accept': 'application/vnd.github+json' }
+      cache: 'no-store',
+      headers: {
+        'Authorization': 'Bearer ' + cfg.token,
+        'Accept': 'application/vnd.github+json',
+        'Cache-Control': 'no-cache'
+      }
     });
     if(res.status === 404) return null;
     if(!res.ok) throw new Error('Status ' + res.status);
