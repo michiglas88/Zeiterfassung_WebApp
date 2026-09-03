@@ -893,25 +893,35 @@
     }
   }
 
-  async function doPushToGithub(silent, isRetry){
+  function wait(ms){ return new Promise(resolve => setTimeout(resolve, ms)); }
+
+  async function doPushToGithub(silent){
     const cfg = ghConfig || readGhFormConfig();
     if(!cfg.token || !cfg.owner || !cfg.repo){
       if(!silent) setStatus('ghStatus', 'error', 'Bitte zuerst Verbindung speichern.');
       return;
     }
-    try{
-      if(!silent) setStatus('ghStatus', 'ok', 'Sichere auf GitHub …');
-      const remote = await fetchRemoteFile(cfg);
-      await pushRemoteFile(cfg, entries, remote ? remote.sha : undefined);
-      setStatus('ghStatus', 'ok', 'Gesichert am ' + new Date().toLocaleString('de-AT'));
-    }catch(err){
-      // Bei einem Versions-Konflikt (409) einmal automatisch mit der
-      // aktuellen Version erneut versuchen, bevor ein Fehler gemeldet wird.
-      if(!isRetry && err.message.indexOf('409') !== -1){
-        await doPushToGithub(silent, true);
+    // Bei einem Versions-Konflikt (409) mehrfach mit der jeweils aktuellen
+    // Version erneut versuchen. Das fängt auch Konflikte durch mehrere
+    // gleichzeitig geöffnete Tabs/Fenster ab, die sich sonst gegenseitig
+    // überholen könnten.
+    const maxAttempts = 4;
+    for(let attempt = 1; attempt <= maxAttempts; attempt++){
+      try{
+        if(!silent || attempt > 1) setStatus('ghStatus', 'ok', 'Sichere auf GitHub …');
+        const remote = await fetchRemoteFile(cfg);
+        await pushRemoteFile(cfg, entries, remote ? remote.sha : undefined);
+        setStatus('ghStatus', 'ok', 'Gesichert am ' + new Date().toLocaleString('de-AT'));
+        return;
+      }catch(err){
+        const isConflict = err.message.indexOf('409') !== -1;
+        if(isConflict && attempt < maxAttempts){
+          await wait(300 + Math.random() * 400);
+          continue;
+        }
+        setStatus('ghStatus', 'error', 'Sicherung fehlgeschlagen: ' + err.message);
         return;
       }
-      setStatus('ghStatus', 'error', 'Sicherung fehlgeschlagen: ' + err.message);
     }
   }
 
