@@ -840,8 +840,7 @@
       cache: 'no-store',
       headers: {
         'Authorization': 'Bearer ' + cfg.token,
-        'Accept': 'application/vnd.github+json',
-        'Cache-Control': 'no-cache'
+        'Accept': 'application/vnd.github+json'
       }
     });
     if(res.status === 404) return null;
