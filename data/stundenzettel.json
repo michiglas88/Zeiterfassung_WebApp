@@ -272,22 +272,6 @@
     "minutes": 90
   },
   {
-    "id": "e1788441595126uupcy",
-    "datum": "2026-09-03",
-    "auftrag": "Test 4",
-    "start": "14:30",
-    "ende": "15:00",
-    "minutes": 30
-  },
-  {
-    "id": "e1788441610962qvjke",
-    "datum": "2026-09-03",
-    "auftrag": "Test 5",
-    "start": "15:30",
-    "ende": "16:00",
-    "minutes": 30
-  },
-  {
     "id": "e1788770655562qkh4d",
     "datum": "2026-09-07",
     "auftrag": "Test Eintrag 1",
