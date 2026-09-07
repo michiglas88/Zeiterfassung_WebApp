@@ -328,14 +328,6 @@
     "minutes": 60
   },
   {
-    "id": "e1788442043495wpcr5",
-    "datum": "2026-09-05",
-    "auftrag": "Test 23",
-    "start": "08:00",
-    "ende": "09:00",
-    "minutes": 60
-  },
-  {
     "id": "e1788442064562xa6cy",
     "datum": "2026-09-05",
     "auftrag": "Test 27",
