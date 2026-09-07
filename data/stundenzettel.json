@@ -390,5 +390,13 @@
     "start": "15:00",
     "ende": "15:15",
     "minutes": 15
+  },
+  {
+    "id": "e1788771165972lkv04",
+    "datum": "2026-08-26",
+    "auftrag": "INTERN",
+    "start": "15:15",
+    "ende": "16:15",
+    "minutes": 60
   }
 ]
