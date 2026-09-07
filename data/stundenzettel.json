@@ -374,5 +374,13 @@
     "start": "14:15",
     "ende": "14:30",
     "minutes": 15
+  },
+  {
+    "id": "e1788771144624c4vlw",
+    "datum": "2026-08-26",
+    "auftrag": "RUP Universal AT",
+    "start": "14:30",
+    "ende": "15:00",
+    "minutes": 30
   }
 ]
