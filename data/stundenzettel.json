@@ -358,5 +358,13 @@
     "start": "08:00",
     "ende": "08:30",
     "minutes": 30
+  },
+  {
+    "id": "e1788770695283arcuk",
+    "datum": "2026-09-07",
+    "auftrag": "Test Eintrag 3",
+    "start": "08:30",
+    "ende": "09:30",
+    "minutes": 60
   }
 ]
