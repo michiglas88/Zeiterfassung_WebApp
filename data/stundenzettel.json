@@ -718,5 +718,13 @@
     "start": "15:30",
     "ende": "16:15",
     "minutes": 45
+  },
+  {
+    "id": "e1788772158405sgryt",
+    "datum": "2026-09-07",
+    "auftrag": "INTERN",
+    "start": "07:30",
+    "ende": "08:15",
+    "minutes": 45
   }
 ]
