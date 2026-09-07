@@ -270,21 +270,5 @@
     "start": "15:30",
     "ende": "17:00",
     "minutes": 90
-  },
-  {
-    "id": "e17887707441337dpyn",
-    "datum": "2026-09-07",
-    "auftrag": "Test Eintrag 6",
-    "start": "11:00",
-    "ende": "11:30",
-    "minutes": 30
-  },
-  {
-    "id": "e1788770819985dq3op",
-    "datum": "2026-09-07",
-    "auftrag": "Test Eintrag 7",
-    "start": "11:30",
-    "ende": "12:00",
-    "minutes": 30
   }
 ]
