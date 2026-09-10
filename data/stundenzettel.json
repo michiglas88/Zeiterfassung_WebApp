@@ -918,5 +918,13 @@
     "start": "12:00",
     "ende": "13:30",
     "minutes": 90
+  },
+  {
+    "id": "e17890408614070emlp",
+    "datum": "2026-09-10",
+    "auftrag": "INTERN",
+    "start": "13:30",
+    "ende": "14:00",
+    "minutes": 30
   }
 ]
