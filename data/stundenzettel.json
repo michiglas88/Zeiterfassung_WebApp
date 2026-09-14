@@ -958,5 +958,13 @@
     "start": "07:30",
     "ende": "09:00",
     "minutes": 90
+  },
+  {
+    "id": "e1789371132818sjjn1",
+    "datum": "2026-09-14",
+    "auftrag": "Frühstück INTERN",
+    "start": "09:00",
+    "ende": "09:30",
+    "minutes": 30
   }
 ]
