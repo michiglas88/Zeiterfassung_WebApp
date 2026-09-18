@@ -1150,5 +1150,13 @@
     "start": "13:45",
     "ende": "14:15",
     "minutes": 30
+  },
+  {
+    "id": "e1789737230875mrtlk",
+    "datum": "2026-09-18",
+    "auftrag": "Korr. Kunde ausgeführt",
+    "start": "14:15",
+    "ende": "15:15",
+    "minutes": 60
   }
 ]
