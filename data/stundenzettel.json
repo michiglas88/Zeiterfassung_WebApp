@@ -1166,5 +1166,13 @@
     "start": "07:30",
     "ende": "07:45",
     "minutes": 15
+  },
+  {
+    "id": "e17899738942130y6qo",
+    "datum": "2026-09-21",
+    "auftrag": "INTERN",
+    "start": "07:45",
+    "ende": "08:00",
+    "minutes": 15
   }
 ]
