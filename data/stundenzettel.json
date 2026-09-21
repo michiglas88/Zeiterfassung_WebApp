@@ -1198,5 +1198,13 @@
     "start": "09:30",
     "ende": "13:30",
     "minutes": 240
+  },
+  {
+    "id": "e1789991269369tn6tf",
+    "datum": "2026-09-21",
+    "auftrag": "INTERNE Absprache",
+    "start": "13:30",
+    "ende": "13:45",
+    "minutes": 15
   }
 ]
