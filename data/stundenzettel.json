@@ -1358,5 +1358,13 @@
     "start": "09:00",
     "ende": "10:30",
     "minutes": 90
+  },
+  {
+    "id": "e1790155460926ffvvj",
+    "datum": "2026-09-23",
+    "auftrag": "INTERN Drucker Kali.",
+    "start": "10:30",
+    "ende": "11:30",
+    "minutes": 60
   }
 ]
