@@ -1454,5 +1454,13 @@
     "start": "13:15",
     "ende": "13:30",
     "minutes": 15
+  },
+  {
+    "id": "e17902556660461mx5n",
+    "datum": "2026-09-25",
+    "auftrag": "Krank (Tages-OP IBK)",
+    "start": "07:30",
+    "ende": "15:30",
+    "minutes": 480
   }
 ]
