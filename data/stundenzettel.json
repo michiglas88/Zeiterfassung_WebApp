@@ -1486,5 +1486,13 @@
     "start": "15:30",
     "ende": "15:45",
     "minutes": 15
+  },
+  {
+    "id": "e1790575270963naoty",
+    "datum": "2026-09-28",
+    "auftrag": "INTERN",
+    "start": "07:30",
+    "ende": "07:45",
+    "minutes": 15
   }
 ]
