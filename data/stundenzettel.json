@@ -1502,5 +1502,13 @@
     "start": "07:45",
     "ende": "09:00",
     "minutes": 75
+  },
+  {
+    "id": "e1790590440317sgimq",
+    "datum": "2026-09-28",
+    "auftrag": "Frühstück",
+    "start": "09:00",
+    "ende": "09:30",
+    "minutes": 30
   }
 ]
