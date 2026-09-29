@@ -74,6 +74,18 @@
   header.masthead .header-actions{
     display:flex;
     gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  select.week-select{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    padding: 8px 10px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 4px;
+    background: var(--surface);
+    color: var(--ink);
   }
 
   nav.tabs{
@@ -125,7 +137,7 @@
 
   .entry-form{
     display:grid;
-    grid-template-columns: 1.1fr 1.6fr 0.9fr 0.9fr auto;
+    grid-template-columns: 1fr 1.3fr 1.3fr 0.8fr 0.8fr auto;
     gap: 14px;
     align-items: end;
   }
@@ -347,6 +359,7 @@
       <div class="meta" id="todayLabel"></div>
     </div>
     <div class="header-actions">
+      <select class="week-select" id="pdfWeekSelect"></select>
       <button class="ghost" id="pdfExportBtn">PDF exportieren</button>
     </div>
   </header>
@@ -371,6 +384,10 @@
           <input type="text" id="f-auftrag" placeholder="z. B. Katalog Müller" required>
         </div>
         <div class="field">
+          <label for="f-taetigkeit">Tätigkeit</label>
+          <input type="text" id="f-taetigkeit" placeholder="z. B. Reinzeichnung Umschlag" required>
+        </div>
+        <div class="field">
           <label for="f-start">Startzeit</label>
           <input type="time" id="f-start" required>
         </div>
@@ -389,6 +406,7 @@
           <tr>
             <th>Datum</th>
             <th>Auftrag</th>
+            <th>Tätigkeit</th>
             <th>Start</th>
             <th>Ende</th>
             <th class="num">Zeit</th>
@@ -433,6 +451,15 @@
 
   <!-- TAB 3: Daten & Sicherung -->
   <section class="panel" id="panel-daten">
+
+    <div class="card">
+      <h2>Profil</h2>
+      <p class="card-sub">Dein Name erscheint auf dem PDF-Ausdruck und beim Unterschriftenfeld.</p>
+      <div class="field" style="max-width:320px;">
+        <label for="staff-name">Dein Name</label>
+        <input type="text" id="staff-name" placeholder="z. B. Michael Glas">
+      </div>
+    </div>
 
     <div class="card">
       <h2>Lokale Sicherung (JSON-Datei)</h2>
@@ -503,10 +530,26 @@
 (function(){
   const STORAGE_KEY = 'stundenzettel_entries_v1';
   const GH_CONFIG_KEY = 'stundenzettel_github_cfg_v1';
+  const STAFF_NAME_KEY = 'stundenzettel_staffname_v1';
   const WEEK_BASE_MIN = 40 * 60;
 
   let entries = loadEntries();
   let ghConfig = loadGhConfig();
+
+  // ---------- Persistence: Mitarbeitername ----------
+  function loadStaffName(){
+    return localStorage.getItem(STAFF_NAME_KEY) || '';
+  }
+  function saveStaffName(name){
+    localStorage.setItem(STAFF_NAME_KEY, name);
+  }
+  function slugify(str){
+    return str.toLowerCase()
+      .replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+      .replace(/[^a-z0-9]+/g,'-')
+      .replace(/^-+|-+$/g,'');
+  }
 
   // ---------- Persistence: entries ----------
   function loadEntries(){
@@ -605,7 +648,7 @@
       const w = weekTotals[key];
       const diff = w.minutes - WEEK_BASE_MIN;
       cumulative += diff;
-      return { ...w, diff, cumulative };
+      return { ...w, key, diff, cumulative };
     });
   }
 
@@ -641,6 +684,7 @@
       tr.innerHTML = `
         <td>${isNewDayGroup ? fmtDate(e.datum) : ''}</td>
         <td class="job-cell">${escapeHtml(e.auftrag)}</td>
+        <td class="job-cell">${escapeHtml(e.taetigkeit || '')}</td>
         <td>${e.start}</td>
         <td>${e.ende}</td>
         <td class="num">${fmtDur(e.minutes)}</td>
@@ -705,6 +749,26 @@
   function renderAll(){
     renderEntryTable();
     renderWeekTable();
+    populateWeekSelect();
+  }
+
+  // ---------- PDF-Wochenauswahl ----------
+  function populateWeekSelect(){
+    const select = document.getElementById('pdfWeekSelect');
+    const previousValue = select.value;
+    const weekRows = computeWeekRows().slice().reverse();
+
+    let options = '<option value="all">Gesamter Zeitraum</option>';
+    weekRows.forEach(r => {
+      options += `<option value="${r.key}">KW ${r.week}/${r.year} (${fmtDateShort(r.monday)}–${fmtDateShort(r.sunday)})</option>`;
+    });
+    select.innerHTML = options;
+
+    if(previousValue && [...select.options].some(o => o.value === previousValue)){
+      select.value = previousValue;
+    }else if(weekRows.length){
+      select.value = weekRows[0].key;
+    }
   }
 
   // ---------- Form handling ----------
@@ -712,11 +776,12 @@
     ev.preventDefault();
     const datum = document.getElementById('f-datum').value;
     const auftrag = document.getElementById('f-auftrag').value.trim();
+    const taetigkeit = document.getElementById('f-taetigkeit').value.trim();
     const start = document.getElementById('f-start').value;
     const ende = document.getElementById('f-ende').value;
     const errorEl = document.getElementById('formError');
 
-    if(!datum || !auftrag || !start || !ende){ return; }
+    if(!datum || !auftrag || !taetigkeit || !start || !ende){ return; }
     if(toMinutes(ende) === toMinutes(start)){
       errorEl.textContent = 'Start- und Endzeit dürfen nicht identisch sein.';
       errorEl.style.display = 'block';
@@ -726,7 +791,7 @@
 
     entries.push({
       id: 'e' + Date.now() + Math.random().toString(36).slice(2,7),
-      datum, auftrag, start, ende
+      datum, auftrag, taetigkeit, start, ende
     });
     saveEntries(true);
     renderAll();
@@ -968,23 +1033,31 @@
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'pt', format: 'a4' });
     const todayStr = new Date().toLocaleDateString('de-AT');
+    const staffName = loadStaffName();
+    const selectedWeekKey = document.getElementById('pdfWeekSelect').value || 'all';
 
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(16);
     doc.text('Stundenzettel', 40, 42);
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(10);
-    doc.text('Erstellt am ' + todayStr, 40, 58);
+    doc.text('Mitarbeiter/in: ' + (staffName || '–'), 40, 58);
+    doc.text('Erstellt am ' + todayStr, 40, 72);
 
     const { sorted, dayTotals, weekTotals } = computeGrouped();
+    const filteredSorted = selectedWeekKey === 'all'
+      ? sorted
+      : sorted.filter(e => isoWeekInfo(e.datum).key === selectedWeekKey);
+
     let lastDate = null;
-    const entryRows = sorted.map(e => {
+    const entryRows = filteredSorted.map(e => {
       const wi = isoWeekInfo(e.datum);
       const isNewDay = e.datum !== lastDate;
       lastDate = e.datum;
       return [
         isNewDay ? fmtDate(e.datum) : '',
         e.auftrag,
+        e.taetigkeit || '',
         e.start,
         e.ende,
         fmtDur(e.minutes),
@@ -994,24 +1067,28 @@
     });
 
     doc.autoTable({
-      startY: 72,
-      head: [['Datum','Auftrag','Start','Ende','Zeit','Tag gesamt','Woche gesamt']],
-      body: entryRows.length ? entryRows : [['–','–','–','–','–','–','–']],
-      styles: { font: 'helvetica', fontSize: 8.5, cellPadding: 4 },
+      startY: 86,
+      head: [['Datum','Auftrag','Tätigkeit','Start','Ende','Zeit','Tag gesamt','Woche gesamt']],
+      body: entryRows.length ? entryRows : [['–','–','–','–','–','–','–','–']],
+      styles: { font: 'helvetica', fontSize: 8, cellPadding: 4 },
       headStyles: { fillColor: [43,69,112], textColor: 255 },
       alternateRowStyles: { fillColor: [246,244,238] }
     });
 
-    const weekRows = computeWeekRows();
+    const allWeekRows = computeWeekRows();
+    const shownWeekRows = selectedWeekKey === 'all'
+      ? allWeekRows
+      : allWeekRows.filter(r => r.key === selectedWeekKey);
+
     let y2 = doc.lastAutoTable.finalY + 26;
-    if(y2 > 720){ doc.addPage(); y2 = 50; }
+    if(y2 > 700){ doc.addPage(); y2 = 50; }
 
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(13);
     doc.text('Überstundenkonto', 40, y2);
     y2 += 8;
 
-    const weekTableRows = weekRows.slice().reverse().map(r => [
+    const weekTableRows = shownWeekRows.slice().reverse().map(r => [
       'KW ' + r.week + ' / ' + r.year,
       fmtDateShort(r.monday) + ' – ' + fmtDateShort(r.sunday),
       fmtDur(r.minutes),
@@ -1028,19 +1105,56 @@
       alternateRowStyles: { fillColor: [246,244,238] }
     });
 
-    const finalCumulative = weekRows.length ? weekRows[weekRows.length-1].cumulative : 0;
+    const finalCumulative = allWeekRows.length ? allWeekRows[allWeekRows.length-1].cumulative : 0;
     let y3 = doc.lastAutoTable.finalY + 24;
-    if(y3 > 780){ doc.addPage(); y3 = 50; }
+    if(y3 > 740){ doc.addPage(); y3 = 50; }
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(12);
-    doc.text('Aktueller Stand Überstundenkonto: ' + (finalCumulative >= 0 ? '+' : '') + fmtDur(finalCumulative), 40, y3);
+    doc.text('Aktueller Stand Überstundenkonto (gesamt): ' + (finalCumulative >= 0 ? '+' : '') + fmtDur(finalCumulative), 40, y3);
 
-    doc.save('stundenzettel_' + new Date().toISOString().slice(0,10) + '.pdf');
+    // ---------- Unterschriftenfeld ----------
+    let ySig = y3 + 46;
+    if(ySig > 760){ doc.addPage(); ySig = 60; }
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.text('Ich bestätige die Richtigkeit der oben angegebenen Arbeitszeiten.', 40, ySig);
+    doc.line(40, ySig + 34, 260, ySig + 34);
+    doc.line(300, ySig + 34, 520, ySig + 34);
+    doc.setFontSize(9);
+    doc.text('Ort, Datum', 40, ySig + 46);
+    doc.text('Unterschrift' + (staffName ? ' (' + staffName + ')' : ''), 300, ySig + 46);
+
+    const weekLabelForFile = selectedWeekKey === 'all' ? 'gesamt' : selectedWeekKey;
+    const nameSlug = staffName ? slugify(staffName) : 'unbenannt';
+    doc.save('stundenzettel_' + nameSlug + '_' + weekLabelForFile + '.pdf');
+  });
+
+  // ---------- Mitarbeitername ----------
+  const todayLabelEl = document.getElementById('todayLabel');
+  const staffNameInput = document.getElementById('staff-name');
+
+  function updateTodayLabel(){
+    const dateStr = new Date().toLocaleDateString('de-AT', { weekday:'long', day:'2-digit', month:'2-digit', year:'numeric' });
+    const name = loadStaffName();
+    todayLabelEl.textContent = name ? dateStr + ' · ' + name : dateStr;
+  }
+
+  staffNameInput.addEventListener('change', () => {
+    const name = staffNameInput.value.trim();
+    saveStaffName(name);
+    updateTodayLabel();
+
+    // Dateipfad-Vorschlag nur setzen, solange er noch beim Standardwert steht
+    const pathInput = document.getElementById('gh-path');
+    if(name && (pathInput.value.trim() === '' || pathInput.value.trim() === 'data/stundenzettel.json')){
+      pathInput.value = 'data/' + slugify(name) + '.json';
+    }
   });
 
   // ---------- Init ----------
   document.getElementById('f-datum').value = new Date().toISOString().slice(0,10);
-  document.getElementById('todayLabel').textContent = new Date().toLocaleDateString('de-AT', { weekday:'long', day:'2-digit', month:'2-digit', year:'numeric' });
+  staffNameInput.value = loadStaffName();
+  updateTodayLabel();
   fillGhForm(ghConfig);
   renderAll();
 })();
