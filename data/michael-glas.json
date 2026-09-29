@@ -1,0 +1,1554 @@
+[
+  {
+    "id": "e1788436282228ogdj9",
+    "datum": "2026-08-17",
+    "auftrag": "INTERN",
+    "start": "09:00",
+    "ende": "09:30",
+    "minutes": 30
+  },
+  {
+    "id": "e1788436295516k1yl3",
+    "datum": "2026-08-17",
+    "auftrag": "INTERN",
+    "start": "09:30",
+    "ende": "11:00",
+    "minutes": 90
+  },
+  {
+    "id": "e1788436325023urs8h",
+    "datum": "2026-08-17",
+    "auftrag": "077046",
+    "start": "11:00",
+    "ende": "12:15",
+    "minutes": 75
+  },
+  {
+    "id": "e17884363372514nw47",
+    "datum": "2026-08-17",
+    "auftrag": "INTERN",
+    "start": "12:15",
+    "ende": "12:30",
+    "minutes": 15
+  },
+  {
+    "id": "e178843638290402f6c",
+    "datum": "2026-08-17",
+    "auftrag": "077058",
+    "start": "12:30",
+    "ende": "16:45",
+    "minutes": 255
+  },
+  {
+    "id": "e1788436403744g5swi",
+    "datum": "2026-08-18",
+    "auftrag": "077058",
+    "start": "07:45",
+    "ende": "09:00",
+    "minutes": 75
+  },
+  {
+    "id": "e1788436418175im6wt",
+    "datum": "2026-08-18",
+    "auftrag": "INTERN",
+    "start": "09:00",
+    "ende": "09:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788436435543p1sjr",
+    "datum": "2026-08-18",
+    "auftrag": "077058",
+    "start": "09:15",
+    "ende": "09:30",
+    "minutes": 15
+  },
+  {
+    "id": "e178843644761535yh3",
+    "datum": "2026-08-18",
+    "auftrag": "087102",
+    "start": "09:30",
+    "ende": "14:00",
+    "minutes": 270
+  },
+  {
+    "id": "e1788436464485m763n",
+    "datum": "2026-08-18",
+    "auftrag": "077070",
+    "start": "14:00",
+    "ende": "16:30",
+    "minutes": 150
+  },
+  {
+    "id": "e17884373396028ck3u",
+    "datum": "2026-08-19",
+    "auftrag": "077070",
+    "start": "07:30",
+    "ende": "09:45",
+    "minutes": 135
+  },
+  {
+    "id": "e1788437354183e6kow",
+    "datum": "2026-08-19",
+    "auftrag": "077070",
+    "start": "09:45",
+    "ende": "10:00",
+    "minutes": 15
+  },
+  {
+    "id": "e17884373683651if73",
+    "datum": "2026-08-19",
+    "auftrag": "087102",
+    "start": "10:00",
+    "ende": "10:45",
+    "minutes": 45
+  },
+  {
+    "id": "e17884373821241nsmg",
+    "datum": "2026-08-19",
+    "auftrag": "INTERN",
+    "start": "10:45",
+    "ende": "11:00",
+    "minutes": 15
+  },
+  {
+    "id": "e1788437394446jioku",
+    "datum": "2026-08-19",
+    "auftrag": "087109",
+    "start": "11:00",
+    "ende": "16:30",
+    "minutes": 330
+  },
+  {
+    "id": "e1788437440087r5gi6",
+    "datum": "2026-08-19",
+    "auftrag": "046931",
+    "start": "16:30",
+    "ende": "16:45",
+    "minutes": 15
+  },
+  {
+    "id": "e178843793456259qkw",
+    "datum": "2026-08-20",
+    "auftrag": "046931",
+    "start": "07:30",
+    "ende": "12:30",
+    "minutes": 300
+  },
+  {
+    "id": "e1788437949399ocenw",
+    "datum": "2026-08-20",
+    "auftrag": "087109",
+    "start": "12:30",
+    "ende": "14:30",
+    "minutes": 120
+  },
+  {
+    "id": "e1788437961160ln6fq",
+    "datum": "2026-08-20",
+    "auftrag": "INTERN",
+    "start": "14:30",
+    "ende": "14:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1788437974966ar7n2",
+    "datum": "2026-08-20",
+    "auftrag": "046931",
+    "start": "14:45",
+    "ende": "17:15",
+    "minutes": 150
+  },
+  {
+    "id": "e1788437991134ol7pi",
+    "datum": "2026-08-21",
+    "auftrag": "046931",
+    "start": "07:30",
+    "ende": "10:15",
+    "minutes": 165
+  },
+  {
+    "id": "e1788438001805l8ue7",
+    "datum": "2026-08-21",
+    "auftrag": "087109",
+    "start": "10:15",
+    "ende": "10:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1788438012276o8qsk",
+    "datum": "2026-08-21",
+    "auftrag": "046931",
+    "start": "10:30",
+    "ende": "11:00",
+    "minutes": 30
+  },
+  {
+    "id": "e178843801937426bn2",
+    "datum": "2026-08-21",
+    "auftrag": "INTERN",
+    "start": "11:00",
+    "ende": "11:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788438031677lhji9",
+    "datum": "2026-08-21",
+    "auftrag": "046931",
+    "start": "11:15",
+    "ende": "12:00",
+    "minutes": 45
+  },
+  {
+    "id": "e17884380454446rgu2",
+    "datum": "2026-08-21",
+    "auftrag": "087109",
+    "start": "12:00",
+    "ende": "13:45",
+    "minutes": 105
+  },
+  {
+    "id": "e17884384505997r5y3",
+    "datum": "2026-08-24",
+    "auftrag": "087109",
+    "start": "07:30",
+    "ende": "08:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788438462443jvr53",
+    "datum": "2026-08-24",
+    "auftrag": "INTERN",
+    "start": "08:00",
+    "ende": "08:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788438477890jeq0f",
+    "datum": "2026-08-24",
+    "auftrag": "046934",
+    "start": "08:15",
+    "ende": "14:15",
+    "minutes": 360
+  },
+  {
+    "id": "e1788438498595m3bwa",
+    "datum": "2026-08-24",
+    "auftrag": "INTERT",
+    "start": "14:15",
+    "ende": "14:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1788438505985mhc0d",
+    "datum": "2026-08-24",
+    "auftrag": "INTERT",
+    "start": "14:30",
+    "ende": "15:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788438524545c514o",
+    "datum": "2026-08-24",
+    "auftrag": "046934",
+    "start": "15:00",
+    "ende": "15:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788438535386d1i4a",
+    "datum": "2026-08-24",
+    "auftrag": "INTERT",
+    "start": "15:15",
+    "ende": "15:30",
+    "minutes": 15
+  },
+  {
+    "id": "e17884385458169s91x",
+    "datum": "2026-08-24",
+    "auftrag": "046934",
+    "start": "15:30",
+    "ende": "17:00",
+    "minutes": 90
+  },
+  {
+    "id": "e1788770890461bktbh",
+    "datum": "2026-08-25",
+    "auftrag": "046934",
+    "start": "07:30",
+    "ende": "09:45",
+    "minutes": 135
+  },
+  {
+    "id": "e1788770902340grm1q",
+    "datum": "2026-08-25",
+    "auftrag": "036922",
+    "start": "09:45",
+    "ende": "10:45",
+    "minutes": 60
+  },
+  {
+    "id": "e1788770913429miwhe",
+    "datum": "2026-08-25",
+    "auftrag": "077051",
+    "start": "10:45",
+    "ende": "11:45",
+    "minutes": 60
+  },
+  {
+    "id": "e178877092626718lw4",
+    "datum": "2026-08-25",
+    "auftrag": "087102",
+    "start": "11:45",
+    "ende": "12:30",
+    "minutes": 45
+  },
+  {
+    "id": "e1788770935939tkard",
+    "datum": "2026-08-25",
+    "auftrag": "087102",
+    "start": "12:30",
+    "ende": "14:30",
+    "minutes": 120
+  },
+  {
+    "id": "e1788770956601n8pjm",
+    "datum": "2026-08-25",
+    "auftrag": "046934",
+    "start": "14:30",
+    "ende": "15:30",
+    "minutes": 60
+  },
+  {
+    "id": "e1788770972363gilmw",
+    "datum": "2026-08-25",
+    "auftrag": "046934",
+    "start": "15:30",
+    "ende": "16:30",
+    "minutes": 60
+  },
+  {
+    "id": "e1788771039425cm492",
+    "datum": "2026-08-26",
+    "auftrag": "046934",
+    "start": "07:30",
+    "ende": "09:30",
+    "minutes": 120
+  },
+  {
+    "id": "e17887710497847dzrg",
+    "datum": "2026-08-26",
+    "auftrag": "046934",
+    "start": "09:30",
+    "ende": "13:15",
+    "minutes": 225
+  },
+  {
+    "id": "e1788771066231dsm4f",
+    "datum": "2026-08-26",
+    "auftrag": "INTERN",
+    "start": "13:15",
+    "ende": "13:30",
+    "minutes": 15
+  },
+  {
+    "id": "e17887710803264glu4",
+    "datum": "2026-08-26",
+    "auftrag": "036923",
+    "start": "13:30",
+    "ende": "14:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788771094871bej5m",
+    "datum": "2026-08-26",
+    "auftrag": "INTERN",
+    "start": "14:00",
+    "ende": "14:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788771102814frfa9",
+    "datum": "2026-08-26",
+    "auftrag": "INTERN",
+    "start": "14:15",
+    "ende": "14:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1788771144624c4vlw",
+    "datum": "2026-08-26",
+    "auftrag": "RUP Universal AT",
+    "start": "14:30",
+    "ende": "15:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788771152981w6f9n",
+    "datum": "2026-08-26",
+    "auftrag": "INTERN",
+    "start": "15:00",
+    "ende": "15:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788771165972lkv04",
+    "datum": "2026-08-26",
+    "auftrag": "INTERN",
+    "start": "15:15",
+    "ende": "16:15",
+    "minutes": 60
+  },
+  {
+    "id": "e1788771174285wy8gd",
+    "datum": "2026-08-26",
+    "auftrag": "INTERN",
+    "start": "16:15",
+    "ende": "16:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1788771194724nyiol",
+    "datum": "2026-08-27",
+    "auftrag": "046934",
+    "start": "07:30",
+    "ende": "08:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788771205868a9nw6",
+    "datum": "2026-08-27",
+    "auftrag": "087120",
+    "start": "08:00",
+    "ende": "09:15",
+    "minutes": 75
+  },
+  {
+    "id": "e178877121500526fxl",
+    "datum": "2026-08-27",
+    "auftrag": "INTERN",
+    "start": "09:15",
+    "ende": "10:30",
+    "minutes": 75
+  },
+  {
+    "id": "e1788771226664gsaap",
+    "datum": "2026-08-27",
+    "auftrag": "087120",
+    "start": "10:30",
+    "ende": "11:30",
+    "minutes": 60
+  },
+  {
+    "id": "e1788771237227eprok",
+    "datum": "2026-08-27",
+    "auftrag": "087120",
+    "start": "11:30",
+    "ende": "13:30",
+    "minutes": 120
+  },
+  {
+    "id": "e1788771250708pfbfn",
+    "datum": "2026-08-27",
+    "auftrag": "046934",
+    "start": "13:30",
+    "ende": "14:15",
+    "minutes": 45
+  },
+  {
+    "id": "e1788771264331cdi9j",
+    "datum": "2026-08-27",
+    "auftrag": "08712",
+    "start": "14:15",
+    "ende": "16:15",
+    "minutes": 120
+  },
+  {
+    "id": "e1788771280564m9mgg",
+    "datum": "2026-08-28",
+    "auftrag": "046934",
+    "start": "07:30",
+    "ende": "08:45",
+    "minutes": 75
+  },
+  {
+    "id": "e1788771292459btowl",
+    "datum": "2026-08-28",
+    "auftrag": "087123",
+    "start": "08:45",
+    "ende": "09:15",
+    "minutes": 30
+  },
+  {
+    "id": "e17887713040504zxo1",
+    "datum": "2026-08-28",
+    "auftrag": "046934",
+    "start": "09:15",
+    "ende": "10:15",
+    "minutes": 60
+  },
+  {
+    "id": "e1788771318426du183",
+    "datum": "2026-08-28",
+    "auftrag": "087123",
+    "start": "10:15",
+    "ende": "13:00",
+    "minutes": 165
+  },
+  {
+    "id": "e1788771328993mgnhv",
+    "datum": "2026-08-28",
+    "auftrag": "INTERN",
+    "start": "13:00",
+    "ende": "14:00",
+    "minutes": 60
+  },
+  {
+    "id": "e1788771374497sbqih",
+    "datum": "2026-08-31",
+    "auftrag": "INTERN",
+    "start": "07:30",
+    "ende": "08:30",
+    "minutes": 60
+  },
+  {
+    "id": "e17887713830348aksv",
+    "datum": "2026-08-31",
+    "auftrag": "INTERN",
+    "start": "08:30",
+    "ende": "09:30",
+    "minutes": 60
+  },
+  {
+    "id": "e1788771399977wz8wr",
+    "datum": "2026-08-31",
+    "auftrag": "087123",
+    "start": "09:30",
+    "ende": "10:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788771411848z2oh1",
+    "datum": "2026-08-31",
+    "auftrag": "046934",
+    "start": "10:00",
+    "ende": "10:30",
+    "minutes": 30
+  },
+  {
+    "id": "e1788771425402od57s",
+    "datum": "2026-08-31",
+    "auftrag": "087123",
+    "start": "10:30",
+    "ende": "11:45",
+    "minutes": 75
+  },
+  {
+    "id": "e1788771435807ww5m4",
+    "datum": "2026-08-31",
+    "auftrag": "046934",
+    "start": "11:45",
+    "ende": "12:15",
+    "minutes": 30
+  },
+  {
+    "id": "e1788771445736dwe6v",
+    "datum": "2026-08-31",
+    "auftrag": "087123",
+    "start": "12:15",
+    "ende": "12:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1788771458871hbazr",
+    "datum": "2026-08-31",
+    "auftrag": "046934",
+    "start": "12:30",
+    "ende": "14:15",
+    "minutes": 105
+  },
+  {
+    "id": "e17887714707848cc3q",
+    "datum": "2026-08-31",
+    "auftrag": "087123",
+    "start": "14:15",
+    "ende": "15:00",
+    "minutes": 45
+  },
+  {
+    "id": "e1788771481807uw19j",
+    "datum": "2026-08-31",
+    "auftrag": "046934",
+    "start": "15:00",
+    "ende": "16:30",
+    "minutes": 90
+  },
+  {
+    "id": "e1788771490033av628",
+    "datum": "2026-08-31",
+    "auftrag": "INTERN",
+    "start": "16:30",
+    "ende": "16:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1788771509311k61ft",
+    "datum": "2026-09-01",
+    "auftrag": "087123",
+    "start": "07:30",
+    "ende": "16:45",
+    "minutes": 555
+  },
+  {
+    "id": "e1788771525734lfqbt",
+    "datum": "2026-09-02",
+    "auftrag": "087123",
+    "start": "07:30",
+    "ende": "10:30",
+    "minutes": 180
+  },
+  {
+    "id": "e1788771534695swkgk",
+    "datum": "2026-09-02",
+    "auftrag": "087102",
+    "start": "10:30",
+    "ende": "11:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788771543543vh6ql",
+    "datum": "2026-09-02",
+    "auftrag": "087102",
+    "start": "11:00",
+    "ende": "15:15",
+    "minutes": 255
+  },
+  {
+    "id": "e1788771551953si6m7",
+    "datum": "2026-09-02",
+    "auftrag": "INTERN",
+    "start": "15:15",
+    "ende": "15:30",
+    "minutes": 15
+  },
+  {
+    "id": "e178877156417592qn4",
+    "datum": "2026-09-02",
+    "auftrag": "087102",
+    "start": "15:30",
+    "ende": "16:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788771591895xynrf",
+    "datum": "2026-09-03",
+    "auftrag": "INTERN",
+    "start": "08:00",
+    "ende": "08:15",
+    "minutes": 15
+  },
+  {
+    "id": "e17887716028169clph",
+    "datum": "2026-09-03",
+    "auftrag": "087120",
+    "start": "08:15",
+    "ende": "09:00",
+    "minutes": 45
+  },
+  {
+    "id": "e1788771613159f04eb",
+    "datum": "2026-09-03",
+    "auftrag": "087102",
+    "start": "09:00",
+    "ende": "10:00",
+    "minutes": 60
+  },
+  {
+    "id": "e1788771623175jyit4",
+    "datum": "2026-09-03",
+    "auftrag": "077051",
+    "start": "10:00",
+    "ende": "11:00",
+    "minutes": 60
+  },
+  {
+    "id": "e17887716308467g22m",
+    "datum": "2026-09-03",
+    "auftrag": "INTERN",
+    "start": "11:00",
+    "ende": "11:15",
+    "minutes": 15
+  },
+  {
+    "id": "e178877164001491z0g",
+    "datum": "2026-09-03",
+    "auftrag": "087123",
+    "start": "11:15",
+    "ende": "12:30",
+    "minutes": 75
+  },
+  {
+    "id": "e1788771658550fax03",
+    "datum": "2026-09-03",
+    "auftrag": "087123",
+    "start": "13:00",
+    "ende": "13:45",
+    "minutes": 45
+  },
+  {
+    "id": "e1788771666552eq1mu",
+    "datum": "2026-09-03",
+    "auftrag": "INTERN",
+    "start": "13:45",
+    "ende": "14:30",
+    "minutes": 45
+  },
+  {
+    "id": "e1788771674622cgizt",
+    "datum": "2026-09-03",
+    "auftrag": "087102",
+    "start": "14:30",
+    "ende": "15:30",
+    "minutes": 60
+  },
+  {
+    "id": "e17887716898952vujt",
+    "datum": "2026-09-03",
+    "auftrag": "INTERN",
+    "start": "15:30",
+    "ende": "16:15",
+    "minutes": 45
+  },
+  {
+    "id": "e1788772158405sgryt",
+    "datum": "2026-09-07",
+    "auftrag": "INTERN",
+    "start": "07:30",
+    "ende": "08:15",
+    "minutes": 45
+  },
+  {
+    "id": "e178877217410246uow",
+    "datum": "2026-09-07",
+    "auftrag": "087102",
+    "start": "08:15",
+    "ende": "09:00",
+    "minutes": 45
+  },
+  {
+    "id": "e17887721780375e36h",
+    "datum": "2026-09-07",
+    "auftrag": "INTERN",
+    "start": "09:00",
+    "ende": "09:30",
+    "minutes": 30
+  },
+  {
+    "id": "e1788772188726yntea",
+    "datum": "2026-09-07",
+    "auftrag": "087102",
+    "start": "09:30",
+    "ende": "10:30",
+    "minutes": 60
+  },
+  {
+    "id": "e17887722011824t7sa",
+    "datum": "2026-09-07",
+    "auftrag": "INTERN",
+    "start": "10:30",
+    "ende": "11:00",
+    "minutes": 30
+  },
+  {
+    "id": "e1788777814271j6ac5",
+    "datum": "2026-09-07",
+    "auftrag": "087102",
+    "start": "11:00",
+    "ende": "11:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788777828612w7yyl",
+    "datum": "2026-09-07",
+    "auftrag": "087102",
+    "start": "11:15",
+    "ende": "12:15",
+    "minutes": 60
+  },
+  {
+    "id": "e1788785453972o1b1b",
+    "datum": "2026-09-07",
+    "auftrag": "INTERN",
+    "start": "12:45",
+    "ende": "13:30",
+    "minutes": 45
+  },
+  {
+    "id": "e1788785469582ghnbi",
+    "datum": "2026-09-07",
+    "auftrag": "087120",
+    "start": "13:30",
+    "ende": "13:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1788785485382a0mtf",
+    "datum": "2026-09-07",
+    "auftrag": "INTERN",
+    "start": "13:45",
+    "ende": "14:15",
+    "minutes": 30
+  },
+  {
+    "id": "e17887855003105g2fo",
+    "datum": "2026-09-07",
+    "auftrag": "087102",
+    "start": "14:15",
+    "ende": "14:45",
+    "minutes": 30
+  },
+  {
+    "id": "e1788791490381t7zu3",
+    "datum": "2026-09-07",
+    "auftrag": "087102",
+    "start": "14:45",
+    "ende": "16:30",
+    "minutes": 105
+  },
+  {
+    "id": "e17887918027646puye",
+    "datum": "2026-09-07",
+    "auftrag": "087120",
+    "start": "16:30",
+    "ende": "16:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1788850260518dgo4k",
+    "datum": "2026-09-08",
+    "auftrag": "087102",
+    "start": "07:30",
+    "ende": "08:45",
+    "minutes": 75
+  },
+  {
+    "id": "e1788853527254sypbq",
+    "datum": "2026-09-08",
+    "auftrag": "087123",
+    "start": "08:45",
+    "ende": "09:15",
+    "minutes": 30
+  },
+  {
+    "id": "e1788856843303nkzj3",
+    "datum": "2026-09-08",
+    "auftrag": "087102",
+    "start": "09:15",
+    "ende": "10:45",
+    "minutes": 90
+  },
+  {
+    "id": "e1788877907993ud5jz",
+    "datum": "2026-09-08",
+    "auftrag": "087102",
+    "start": "10:45",
+    "ende": "16:30",
+    "minutes": 345
+  },
+  {
+    "id": "e17889442400961y35j",
+    "datum": "2026-09-09",
+    "auftrag": "087102",
+    "start": "07:45",
+    "ende": "10:00",
+    "minutes": 135
+  },
+  {
+    "id": "e1788944264067jdv5h",
+    "datum": "2026-09-09",
+    "auftrag": "087102",
+    "start": "10:00",
+    "ende": "10:15",
+    "minutes": 15
+  },
+  {
+    "id": "e178894436675726v0a",
+    "datum": "2026-09-09",
+    "auftrag": "097134",
+    "start": "10:15",
+    "ende": "11:00",
+    "minutes": 45
+  },
+  {
+    "id": "e1788945504462jsrix",
+    "datum": "2026-09-09",
+    "auftrag": "087102",
+    "start": "11:00",
+    "ende": "11:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1788964370885gkeyr",
+    "datum": "2026-09-09",
+    "auftrag": "097134",
+    "start": "11:15",
+    "ende": "16:30",
+    "minutes": 315
+  },
+  {
+    "id": "e17890337152863q5gr",
+    "datum": "2026-09-10",
+    "auftrag": "097134",
+    "start": "07:30",
+    "ende": "11:45",
+    "minutes": 255
+  },
+  {
+    "id": "e1789034482579mul5q",
+    "datum": "2026-09-10",
+    "auftrag": "087120",
+    "start": "11:45",
+    "ende": "12:00",
+    "minutes": 15
+  },
+  {
+    "id": "e1789039702517d6sib",
+    "datum": "2026-09-10",
+    "auftrag": "097134",
+    "start": "12:00",
+    "ende": "13:30",
+    "minutes": 90
+  },
+  {
+    "id": "e17890408614070emlp",
+    "datum": "2026-09-10",
+    "auftrag": "INTERN",
+    "start": "13:30",
+    "ende": "14:00",
+    "minutes": 30
+  },
+  {
+    "id": "e17890512619073ginz",
+    "datum": "2026-09-10",
+    "auftrag": "097134",
+    "start": "14:00",
+    "ende": "16:45",
+    "minutes": 165
+  },
+  {
+    "id": "e1789120917923n06xh",
+    "datum": "2026-09-11",
+    "auftrag": "097134",
+    "start": "07:15",
+    "ende": "12:00",
+    "minutes": 285
+  },
+  {
+    "id": "e1789127885256g9f5n",
+    "datum": "2026-09-11",
+    "auftrag": "097134",
+    "start": "12:30",
+    "ende": "14:45",
+    "minutes": 135
+  },
+  {
+    "id": "e1789369155282p1x4n",
+    "datum": "2026-09-14",
+    "auftrag": "097134",
+    "start": "07:30",
+    "ende": "09:00",
+    "minutes": 90
+  },
+  {
+    "id": "e1789371132818sjjn1",
+    "datum": "2026-09-14",
+    "auftrag": "Frühstück INTERN",
+    "start": "09:00",
+    "ende": "09:30",
+    "minutes": 30
+  },
+  {
+    "id": "e1789376788581pdnkq",
+    "datum": "2026-09-14",
+    "auftrag": "087102",
+    "start": "09:30",
+    "ende": "11:00",
+    "minutes": 90
+  },
+  {
+    "id": "e1789379556369mb0oh",
+    "datum": "2026-09-14",
+    "auftrag": "097134",
+    "start": "11:00",
+    "ende": "12:00",
+    "minutes": 60
+  },
+  {
+    "id": "e1789385440757ztgpk",
+    "datum": "2026-09-14",
+    "auftrag": "087102",
+    "start": "12:00",
+    "ende": "13:30",
+    "minutes": 90
+  },
+  {
+    "id": "e17893935463715pm1n",
+    "datum": "2026-09-14",
+    "auftrag": "097134",
+    "start": "13:30",
+    "ende": "14:00",
+    "minutes": 30
+  },
+  {
+    "id": "e17893935564352r5ku",
+    "datum": "2026-09-14",
+    "auftrag": "087102",
+    "start": "14:00",
+    "ende": "15:45",
+    "minutes": 105
+  },
+  {
+    "id": "e1789395216045gxilt",
+    "datum": "2026-09-14",
+    "auftrag": "097134",
+    "start": "15:45",
+    "ende": "16:15",
+    "minutes": 30
+  },
+  {
+    "id": "e1789396502728whbn2",
+    "datum": "2026-09-14",
+    "auftrag": "087102",
+    "start": "16:15",
+    "ende": "16:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1789455445825lmump",
+    "datum": "2026-09-15",
+    "auftrag": "097134",
+    "start": "07:15",
+    "ende": "09:00",
+    "minutes": 105
+  },
+  {
+    "id": "e1789456608818rj7wj",
+    "datum": "2026-09-15",
+    "auftrag": "087102",
+    "start": "09:00",
+    "ende": "09:15",
+    "minutes": 15
+  },
+  {
+    "id": "e17894592175101tl75",
+    "datum": "2026-09-15",
+    "auftrag": "097134",
+    "start": "09:15",
+    "ende": "10:00",
+    "minutes": 45
+  },
+  {
+    "id": "e17894630388481cht9",
+    "datum": "2026-09-15",
+    "auftrag": "087102",
+    "start": "10:00",
+    "ende": "11:00",
+    "minutes": 60
+  },
+  {
+    "id": "e1789480189820pdjyb",
+    "datum": "2026-09-15",
+    "auftrag": "097134",
+    "start": "11:00",
+    "ende": "16:00",
+    "minutes": 300
+  },
+  {
+    "id": "e17897096775904w3ak",
+    "datum": "2026-09-16",
+    "auftrag": "Krank",
+    "start": "07:30",
+    "ende": "15:30",
+    "minutes": 480
+  },
+  {
+    "id": "e17897096894550oxky",
+    "datum": "2026-09-17",
+    "auftrag": "Krank",
+    "start": "07:30",
+    "ende": "15:30",
+    "minutes": 480
+  },
+  {
+    "id": "e178971772476111jkf",
+    "datum": "2026-09-18",
+    "auftrag": "087102",
+    "start": "07:30",
+    "ende": "07:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1789717736868ir9if",
+    "datum": "2026-09-18",
+    "auftrag": "INTERN",
+    "start": "07:45",
+    "ende": "08:30",
+    "minutes": 45
+  },
+  {
+    "id": "e1789717745900pkreq",
+    "datum": "2026-09-18",
+    "auftrag": "087123",
+    "start": "08:30",
+    "ende": "09:30",
+    "minutes": 60
+  },
+  {
+    "id": "e1789717757252atcj4",
+    "datum": "2026-09-18",
+    "auftrag": "087102",
+    "start": "09:30",
+    "ende": "09:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1789720357179ftku2",
+    "datum": "2026-09-18",
+    "auftrag": "087123",
+    "start": "09:45",
+    "ende": "10:15",
+    "minutes": 30
+  },
+  {
+    "id": "e1789725265788jqhqt",
+    "datum": "2026-09-18",
+    "auftrag": "087102",
+    "start": "10:15",
+    "ende": "12:00",
+    "minutes": 105
+  },
+  {
+    "id": "e1789731834388d97on",
+    "datum": "2026-09-18",
+    "auftrag": "077046",
+    "start": "12:00",
+    "ende": "13:30",
+    "minutes": 90
+  },
+  {
+    "id": "e1789732001996qlust",
+    "datum": "2026-09-18",
+    "auftrag": "INTERN",
+    "start": "13:30",
+    "ende": "13:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1789737214827dinaz",
+    "datum": "2026-09-18",
+    "auftrag": "INTERN",
+    "start": "13:45",
+    "ende": "14:15",
+    "minutes": 30
+  },
+  {
+    "id": "e1789737230875mrtlk",
+    "datum": "2026-09-18",
+    "auftrag": "Korr. Kunde ausgeführt",
+    "start": "14:15",
+    "ende": "15:15",
+    "minutes": 60
+  },
+  {
+    "id": "e1789973886281dmomm",
+    "datum": "2026-09-21",
+    "auftrag": "INTERN",
+    "start": "07:30",
+    "ende": "07:45",
+    "minutes": 15
+  },
+  {
+    "id": "e17899738942130y6qo",
+    "datum": "2026-09-21",
+    "auftrag": "INTERN",
+    "start": "07:45",
+    "ende": "08:00",
+    "minutes": 15
+  },
+  {
+    "id": "e1789973905340bdsso",
+    "datum": "2026-09-21",
+    "auftrag": "087123",
+    "start": "08:00",
+    "ende": "09:00",
+    "minutes": 60
+  },
+  {
+    "id": "e1789991176050qi9aa",
+    "datum": "2026-09-21",
+    "auftrag": "Frühstück",
+    "start": "09:00",
+    "ende": "09:30",
+    "minutes": 30
+  },
+  {
+    "id": "e1789991193747m3kge",
+    "datum": "2026-09-21",
+    "auftrag": "087102",
+    "start": "09:30",
+    "ende": "13:30",
+    "minutes": 240
+  },
+  {
+    "id": "e1789991269369tn6tf",
+    "datum": "2026-09-21",
+    "auftrag": "INTERNE Absprache",
+    "start": "13:30",
+    "ende": "13:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1789994844188oezjw",
+    "datum": "2026-09-21",
+    "auftrag": "077046",
+    "start": "14:00",
+    "ende": "14:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1789994856551pc61c",
+    "datum": "2026-09-21",
+    "auftrag": "087102",
+    "start": "14:15",
+    "ende": "14:45",
+    "minutes": 30
+  },
+  {
+    "id": "e17899986840163ixp7",
+    "datum": "2026-09-21",
+    "auftrag": "077046",
+    "start": "14:45",
+    "ende": "15:45",
+    "minutes": 60
+  },
+  {
+    "id": "e1790001718281h9202",
+    "datum": "2026-09-21",
+    "auftrag": "077046",
+    "start": "15:45",
+    "ende": "16:45",
+    "minutes": 60
+  },
+  {
+    "id": "e17900582985274wflz",
+    "datum": "2026-09-22",
+    "auftrag": "077046",
+    "start": "07:45",
+    "ende": "08:30",
+    "minutes": 45
+  },
+  {
+    "id": "e1790063264514qkrhw",
+    "datum": "2026-09-22",
+    "auftrag": "087123",
+    "start": "08:30",
+    "ende": "09:45",
+    "minutes": 75
+  },
+  {
+    "id": "e1790064853113gswwu",
+    "datum": "2026-09-22",
+    "auftrag": "077046",
+    "start": "09:45",
+    "ende": "10:15",
+    "minutes": 30
+  },
+  {
+    "id": "e1790070147885wpf4u",
+    "datum": "2026-09-22",
+    "auftrag": "077046",
+    "start": "10:30",
+    "ende": "10:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1790070153853ds8e4",
+    "datum": "2026-09-22",
+    "auftrag": "077046",
+    "start": "10:45",
+    "ende": "11:45",
+    "minutes": 60
+  },
+  {
+    "id": "e1790071908913t9e05",
+    "datum": "2026-09-22",
+    "auftrag": "INTERN",
+    "start": "11:45",
+    "ende": "12:00",
+    "minutes": 15
+  },
+  {
+    "id": "e1790071956073f1nqt",
+    "datum": "2026-09-22",
+    "auftrag": "INTERN",
+    "start": "10:15",
+    "ende": "10:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1790077284915lbfcm",
+    "datum": "2026-09-22",
+    "auftrag": "077046",
+    "start": "12:15",
+    "ende": "13:45",
+    "minutes": 90
+  },
+  {
+    "id": "e179007804823749z1c",
+    "datum": "2026-09-22",
+    "auftrag": "INTERN",
+    "start": "13:45",
+    "ende": "14:00",
+    "minutes": 15
+  },
+  {
+    "id": "e1790085646306axcwt",
+    "datum": "2026-09-22",
+    "auftrag": "077046",
+    "start": "14:00",
+    "ende": "16:00",
+    "minutes": 120
+  },
+  {
+    "id": "e1790086492199herql",
+    "datum": "2026-09-22",
+    "auftrag": "077046",
+    "start": "16:00",
+    "ende": "16:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1790087291588q3s06",
+    "datum": "2026-09-22",
+    "auftrag": "INTERN",
+    "start": "16:15",
+    "ende": "16:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1790088296944pob3s",
+    "datum": "2026-09-22",
+    "auftrag": "INTERN",
+    "start": "16:30",
+    "ende": "16:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1790147126195uqr3c",
+    "datum": "2026-09-23",
+    "auftrag": "077046",
+    "start": "07:30",
+    "ende": "09:00",
+    "minutes": 90
+  },
+  {
+    "id": "e1790155441269gpa33",
+    "datum": "2026-09-23",
+    "auftrag": "077046",
+    "start": "09:00",
+    "ende": "10:30",
+    "minutes": 90
+  },
+  {
+    "id": "e1790155460926ffvvj",
+    "datum": "2026-09-23",
+    "auftrag": "INTERN Drucker Kali.",
+    "start": "10:30",
+    "ende": "11:30",
+    "minutes": 60
+  },
+  {
+    "id": "e1790170826222yfn1q",
+    "datum": "2026-09-23",
+    "auftrag": "077046",
+    "start": "11:30",
+    "ende": "15:30",
+    "minutes": 240
+  },
+  {
+    "id": "e1790171384755fnwxe",
+    "datum": "2026-09-23",
+    "auftrag": "077046",
+    "start": "15:30",
+    "ende": "15:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1790171390987zjt01",
+    "datum": "2026-09-23",
+    "auftrag": "077046",
+    "start": "15:45",
+    "ende": "16:00",
+    "minutes": 15
+  },
+  {
+    "id": "e17901731751421gmol",
+    "datum": "2026-09-23",
+    "auftrag": "INTERN",
+    "start": "16:00",
+    "ende": "16:30",
+    "minutes": 30
+  },
+  {
+    "id": "e1790239785764qgr07",
+    "datum": "2026-09-24",
+    "auftrag": "097148",
+    "start": "07:30",
+    "ende": "11:00",
+    "minutes": 210
+  },
+  {
+    "id": "e1790245215364hhqyk",
+    "datum": "2026-09-24",
+    "auftrag": "077046",
+    "start": "11:00",
+    "ende": "11:30",
+    "minutes": 30
+  },
+  {
+    "id": "e17902452241852ubyq",
+    "datum": "2026-09-24",
+    "auftrag": "077046",
+    "start": "11:30",
+    "ende": "12:00",
+    "minutes": 30
+  },
+  {
+    "id": "e17902452289289dhdd",
+    "datum": "2026-09-24",
+    "auftrag": "077046",
+    "start": "12:00",
+    "ende": "12:15",
+    "minutes": 15
+  },
+  {
+    "id": "e1790245237367dmoil",
+    "datum": "2026-09-24",
+    "auftrag": "INTERN",
+    "start": "12:15",
+    "ende": "12:30",
+    "minutes": 15
+  },
+  {
+    "id": "e1790249931563xibt9",
+    "datum": "2026-09-24",
+    "auftrag": "036916",
+    "start": "12:45",
+    "ende": "13:15",
+    "minutes": 30
+  },
+  {
+    "id": "e1790249939427jtdju",
+    "datum": "2026-09-24",
+    "auftrag": "036916",
+    "start": "13:15",
+    "ende": "13:30",
+    "minutes": 15
+  },
+  {
+    "id": "e17902556660461mx5n",
+    "datum": "2026-09-25",
+    "auftrag": "Krank (Tages-OP IBK)",
+    "start": "07:30",
+    "ende": "15:30",
+    "minutes": 480
+  },
+  {
+    "id": "e1790256854728gfcsr",
+    "datum": "2026-09-24",
+    "auftrag": "036900",
+    "start": "14:15",
+    "ende": "15:30",
+    "minutes": 75
+  },
+  {
+    "id": "e17902568896700nr5n",
+    "datum": "2026-09-24",
+    "auftrag": "INTERN",
+    "start": "13:45",
+    "ende": "14:15",
+    "minutes": 30
+  },
+  {
+    "id": "e1790257996051ierxm",
+    "datum": "2026-09-24",
+    "auftrag": "INTERN",
+    "start": "15:30",
+    "ende": "15:45",
+    "minutes": 15
+  },
+  {
+    "id": "e1790575270963naoty",
+    "datum": "2026-09-28",
+    "auftrag": "INTERN",
+    "start": "07:30",
+    "ende": "07:45",
+    "minutes": 15
+  },
+  {
+    "id": "e17905791460408oku4",
+    "datum": "2026-09-28",
+    "auftrag": "036900",
+    "start": "07:45",
+    "ende": "09:00",
+    "minutes": 75
+  },
+  {
+    "id": "e1790590440317sgimq",
+    "datum": "2026-09-28",
+    "auftrag": "Frühstück",
+    "start": "09:00",
+    "ende": "09:30",
+    "minutes": 30
+  },
+  {
+    "id": "e1790590521315p25tg",
+    "datum": "2026-09-28",
+    "auftrag": "036900",
+    "start": "09:30",
+    "ende": "12:15",
+    "minutes": 165
+  },
+  {
+    "id": "e1790598094568xah7y",
+    "datum": "2026-09-28",
+    "auftrag": "036900",
+    "start": "12:30",
+    "ende": "14:30",
+    "minutes": 120
+  },
+  {
+    "id": "e1790606244962y8k4c",
+    "datum": "2026-09-28",
+    "auftrag": "087102",
+    "start": "14:30",
+    "ende": "16:45",
+    "minutes": 135
+  },
+  {
+    "id": "e1790664347543gdxzc",
+    "datum": "2026-09-29",
+    "auftrag": "087102",
+    "start": "07:30",
+    "ende": "08:45",
+    "minutes": 75
+  },
+  {
+    "id": "e17906752703467ejn5",
+    "datum": "2026-09-29",
+    "auftrag": "036900",
+    "start": "08:45",
+    "ende": "11:45",
+    "minutes": 180
+  }
+]
