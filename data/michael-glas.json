@@ -1577,5 +1577,14 @@
     "start": "13:15",
     "ende": "13:30",
     "minutes": 15
+  },
+  {
+    "id": "e1790688141807cabb1",
+    "datum": "2026-09-29",
+    "auftrag": "26087109",
+    "taetigkeit": "Stanze VS & RS tauschen",
+    "start": "13:30",
+    "ende": "13:45",
+    "minutes": 15
   }
 ]
