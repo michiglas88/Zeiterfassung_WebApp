@@ -1595,5 +1595,14 @@
     "start": "13:45",
     "ende": "14:30",
     "minutes": 45
+  },
+  {
+    "id": "e17906881793666ydva",
+    "datum": "2026-09-29",
+    "auftrag": "26087102",
+    "taetigkeit": "4. Korrektur Kunde",
+    "start": "14:30",
+    "ende": "14:45",
+    "minutes": 15
   }
 ]
