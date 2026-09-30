@@ -1667,5 +1667,14 @@
     "start": "14:30",
     "ende": "15:15",
     "minutes": 45
+  },
+  {
+    "id": "e1790776760193jtty8",
+    "datum": "2026-09-30",
+    "auftrag": "26087109",
+    "taetigkeit": "Anp. Layout Interne Abstimmung",
+    "start": "15:15",
+    "ende": "15:45",
+    "minutes": 30
   }
 ]
