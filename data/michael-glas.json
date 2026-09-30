@@ -1658,5 +1658,14 @@
     "start": "12:45",
     "ende": "14:30",
     "minutes": 105
+  },
+  {
+    "id": "e1790773884879zmb36",
+    "datum": "2026-09-30",
+    "auftrag": "INTERN",
+    "taetigkeit": "Besprechung Martin",
+    "start": "14:30",
+    "ende": "15:15",
+    "minutes": 45
   }
 ]
