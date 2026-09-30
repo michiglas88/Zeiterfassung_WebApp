@@ -1649,5 +1649,14 @@
     "start": "11:45",
     "ende": "12:15",
     "minutes": 30
+  },
+  {
+    "id": "e1790771506972w16ry",
+    "datum": "2026-09-30",
+    "auftrag": "26097156",
+    "taetigkeit": "Lay. anp., Fußnoten, Button Design",
+    "start": "12:45",
+    "ende": "14:30",
+    "minutes": 105
   }
 ]
