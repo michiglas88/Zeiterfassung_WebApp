@@ -1649,14 +1649,5 @@
     "start": "11:45",
     "ende": "12:15",
     "minutes": 30
-  },
-  {
-    "id": "e17907647803560ek8g",
-    "datum": "2026-09-30",
-    "auftrag": "Test",
-    "taetigkeit": "g",
-    "start": "12:45",
-    "ende": "16:00",
-    "minutes": 195
   }
 ]
