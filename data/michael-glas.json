@@ -1613,5 +1613,14 @@
     "start": "14:45",
     "ende": "15:30",
     "minutes": 45
+  },
+  {
+    "id": "e17907463859119rnmp",
+    "datum": "2026-09-29",
+    "auftrag": "26036900",
+    "taetigkeit": "Lay. anp., Korr. aus Call, Tab. druchlaufend",
+    "start": "15:30",
+    "ende": "17:00",
+    "minutes": 90
   }
 ]
