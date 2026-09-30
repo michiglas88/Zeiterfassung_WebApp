@@ -1631,5 +1631,14 @@
     "start": "07:30",
     "ende": "11:45",
     "minutes": 255
+  },
+  {
+    "id": "e1790761782229td3sk",
+    "datum": "2026-09-30",
+    "auftrag": "26087109",
+    "taetigkeit": "Beschnitt anp., PDF zru Ansicht Erstellen",
+    "start": "07:15",
+    "ende": "07:30",
+    "minutes": 15
   }
 ]
