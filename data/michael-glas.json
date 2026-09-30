@@ -1622,5 +1622,14 @@
     "start": "15:30",
     "ende": "17:00",
     "minutes": 90
+  },
+  {
+    "id": "e179076176652670l3x",
+    "datum": "2026-09-30",
+    "auftrag": "26097156",
+    "taetigkeit": "Lay. anp., Tabelle druchlaufend",
+    "start": "07:30",
+    "ende": "11:45",
+    "minutes": 255
   }
 ]
