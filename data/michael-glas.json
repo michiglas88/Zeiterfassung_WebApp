@@ -1694,5 +1694,14 @@
     "start": "07:30",
     "ende": "10:00",
     "minutes": 150
+  },
+  {
+    "id": "e1790850305186y0cgs",
+    "datum": "2026-10-01",
+    "auftrag": "26097156",
+    "taetigkeit": "Aufbau AT Version",
+    "start": "10:00",
+    "ende": "12:30",
+    "minutes": 150
   }
 ]
