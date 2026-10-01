@@ -1685,5 +1685,14 @@
     "start": "15:45",
     "ende": "16:15",
     "minutes": 30
+  },
+  {
+    "id": "e1790842026077qrqee",
+    "datum": "2026-10-01",
+    "auftrag": "26097156",
+    "taetigkeit": "Layout Korrektur von Sandra",
+    "start": "07:30",
+    "ende": "10:00",
+    "minutes": 150
   }
 ]
