@@ -1703,5 +1703,14 @@
     "start": "10:00",
     "ende": "12:30",
     "minutes": 150
+  },
+  {
+    "id": "e1790862672954s354g",
+    "datum": "2026-10-01",
+    "auftrag": "26097156",
+    "taetigkeit": "Aufbau AT Variante, Layout, Bilder Suche, Kontrolle, VD selbst Suchen",
+    "start": "12:45",
+    "ende": "16:00",
+    "minutes": 195
   }
 ]
