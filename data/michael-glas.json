@@ -1757,5 +1757,14 @@
     "start": "11:30",
     "ende": "12:00",
     "minutes": 30
+  },
+  {
+    "id": "e1790938849755wcx1c",
+    "datum": "2026-10-02",
+    "auftrag": "26087125",
+    "taetigkeit": "1. Kunden Korrektur",
+    "start": "12:00",
+    "ende": "13:00",
+    "minutes": 60
   }
 ]
