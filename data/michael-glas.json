@@ -1748,5 +1748,14 @@
     "start": "11:00",
     "ende": "11:30",
     "minutes": 30
+  },
+  {
+    "id": "e1790938827552px0ep",
+    "datum": "2026-10-02",
+    "auftrag": "26107158",
+    "taetigkeit": "Aufbau Privatkunden",
+    "start": "11:30",
+    "ende": "12:00",
+    "minutes": 30
   }
 ]
