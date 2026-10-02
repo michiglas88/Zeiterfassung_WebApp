@@ -1784,5 +1784,14 @@
     "start": "13:30",
     "ende": "14:00",
     "minutes": 30
+  },
+  {
+    "id": "e1790943982131fy49a",
+    "datum": "2026-10-02",
+    "auftrag": "26087102",
+    "taetigkeit": "7. Korr + Tele. Sabine",
+    "start": "14:00",
+    "ende": "14:15",
+    "minutes": 15
   }
 ]
