@@ -1730,5 +1730,14 @@
     "start": "07:45",
     "ende": "09:45",
     "minutes": 120
+  },
+  {
+    "id": "e1790927288802p4uof",
+    "datum": "2026-10-01",
+    "auftrag": "26097156",
+    "taetigkeit": "Aufbau AT Vr., Lay., Bilder Suche, Lektorat",
+    "start": "12:45",
+    "ende": "16:00",
+    "minutes": 195
   }
 ]
