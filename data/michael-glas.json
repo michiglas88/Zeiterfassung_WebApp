@@ -1721,5 +1721,14 @@
     "start": "07:30",
     "ende": "07:45",
     "minutes": 15
+  },
+  {
+    "id": "e1790927206917wdiht",
+    "datum": "2026-10-02",
+    "auftrag": "26097156",
+    "taetigkeit": "Lektorat, Korrektur AT",
+    "start": "07:45",
+    "ende": "09:45",
+    "minutes": 120
   }
 ]
