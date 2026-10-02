@@ -1739,5 +1739,14 @@
     "start": "09:45",
     "ende": "11:00",
     "minutes": 75
+  },
+  {
+    "id": "e1790933442543ykn2q",
+    "datum": "2026-10-02",
+    "auftrag": "26087102",
+    "taetigkeit": "6. Korr",
+    "start": "11:00",
+    "ende": "11:30",
+    "minutes": 30
   }
 ]
