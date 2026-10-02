@@ -1712,5 +1712,14 @@
     "start": "12:45",
     "ende": "16:00",
     "minutes": 195
+  },
+  {
+    "id": "e1790919958819eep24",
+    "datum": "2026-10-02",
+    "auftrag": "Intern",
+    "taetigkeit": "Arbeitsorganisation",
+    "start": "07:30",
+    "ende": "07:45",
+    "minutes": 15
   }
 ]
