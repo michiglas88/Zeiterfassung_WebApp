@@ -1883,5 +1883,14 @@
     "start": "12:45",
     "ende": "15:30",
     "minutes": 165
+  },
+  {
+    "id": "e1791210929386pr11c",
+    "datum": "2026-10-05",
+    "auftrag": "26087102",
+    "taetigkeit": "INTERNE Nachkorrektur (Server)",
+    "start": "15:30",
+    "ende": "16:00",
+    "minutes": 30
   }
 ]
