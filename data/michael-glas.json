@@ -1829,5 +1829,14 @@
     "start": "08:45",
     "ende": "09:00",
     "minutes": 15
+  },
+  {
+    "id": "e17911852374820yid2",
+    "datum": "2026-10-05",
+    "auftrag": "INTERN",
+    "taetigkeit": "Frühstück",
+    "start": "09:00",
+    "ende": "09:30",
+    "minutes": 30
   }
 ]
