@@ -1847,5 +1847,14 @@
     "start": "09:30",
     "ende": "10:00",
     "minutes": 30
+  },
+  {
+    "id": "e17911884255904jcfq",
+    "datum": "2026-10-05",
+    "auftrag": "26087102",
+    "taetigkeit": "9. Korrektur Korr.",
+    "start": "10:00",
+    "ende": "10:30",
+    "minutes": 30
   }
 ]
