@@ -1892,5 +1892,14 @@
     "start": "15:30",
     "ende": "16:00",
     "minutes": 30
+  },
+  {
+    "id": "e179121093882905spf",
+    "datum": "2026-10-05",
+    "auftrag": "26087125",
+    "taetigkeit": "1. Kunden Korrektur",
+    "start": "16:00",
+    "ende": "16:30",
+    "minutes": 30
   }
 ]
