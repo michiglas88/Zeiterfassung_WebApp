@@ -1811,5 +1811,14 @@
     "start": "07:45",
     "ende": "08:15",
     "minutes": 30
+  },
+  {
+    "id": "e1791185210110qde49",
+    "datum": "2026-10-05",
+    "auftrag": "26087102",
+    "taetigkeit": "8. Kunden Korr.",
+    "start": "08:15",
+    "ende": "08:45",
+    "minutes": 30
   }
 ]
