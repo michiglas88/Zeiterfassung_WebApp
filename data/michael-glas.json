@@ -1793,5 +1793,14 @@
     "start": "14:00",
     "ende": "14:15",
     "minutes": 15
+  },
+  {
+    "id": "e1791185179336kfwc2",
+    "datum": "2026-10-05",
+    "auftrag": "INTERN",
+    "taetigkeit": "Arbeitsorganisation",
+    "start": "07:30",
+    "ende": "07:45",
+    "minutes": 15
   }
 ]
