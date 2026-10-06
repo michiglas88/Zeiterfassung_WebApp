@@ -1973,5 +1973,14 @@
     "start": "15:30",
     "ende": "16:00",
     "minutes": 30
+  },
+  {
+    "id": "e1791294745481ngzyq",
+    "datum": "2026-10-06",
+    "auftrag": "INTERN",
+    "taetigkeit": "Zeitenschreiben",
+    "start": "15:15",
+    "ende": "15:30",
+    "minutes": 15
   }
 ]
