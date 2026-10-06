@@ -1928,5 +1928,14 @@
     "start": "08:00",
     "ende": "10:15",
     "minutes": 135
+  },
+  {
+    "id": "e17912759467669fmky",
+    "datum": "2026-10-06",
+    "auftrag": "INTERN",
+    "taetigkeit": "Absprache mit Jan",
+    "start": "10:15",
+    "ende": "10:30",
+    "minutes": 15
   }
 ]
