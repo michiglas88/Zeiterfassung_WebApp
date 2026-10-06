@@ -1955,5 +1955,14 @@
     "start": "12:00",
     "ende": "12:15",
     "minutes": 15
+  },
+  {
+    "id": "e1791292361906wzd1l",
+    "datum": "2026-10-06",
+    "auftrag": "26097148",
+    "taetigkeit": "Web-Daten",
+    "start": "12:15",
+    "ende": "15:15",
+    "minutes": 180
   }
 ]
