@@ -1910,5 +1910,14 @@
     "start": "07:30",
     "ende": "07:45",
     "minutes": 15
+  },
+  {
+    "id": "e17912663566866arbt",
+    "datum": "2026-10-06",
+    "auftrag": "INTERN",
+    "taetigkeit": "Arbeitsorga",
+    "start": "07:45",
+    "ende": "08:00",
+    "minutes": 15
   }
 ]
