@@ -1982,5 +1982,14 @@
     "start": "15:15",
     "ende": "15:30",
     "minutes": 15
+  },
+  {
+    "id": "e1791354376825a1rdb",
+    "datum": "2026-10-07",
+    "auftrag": "26107158",
+    "taetigkeit": "1. Korrektur Kunde",
+    "start": "07:15",
+    "ende": "08:30",
+    "minutes": 75
   }
 ]
