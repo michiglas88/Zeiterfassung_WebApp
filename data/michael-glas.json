@@ -2027,14 +2027,5 @@
     "start": "10:45",
     "ende": "14:15",
     "minutes": 210
-  },
-  {
-    "id": "e1791383881035e62ny",
-    "datum": "2026-10-07",
-    "auftrag": "26087125",
-    "taetigkeit": "Telefonat Korrektuern aufnehmen",
-    "start": "14:15",
-    "ende": "15:30",
-    "minutes": 75
   }
 ]
