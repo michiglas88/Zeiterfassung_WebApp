@@ -2036,5 +2036,14 @@
     "start": "16:00",
     "ende": "16:30",
     "minutes": 30
+  },
+  {
+    "id": "e1791384350148i63kw",
+    "datum": "2026-10-07",
+    "auftrag": "INTERN",
+    "taetigkeit": "Zeiten",
+    "start": "16:30",
+    "ende": "16:45",
+    "minutes": 15
   }
 ]
