@@ -1991,5 +1991,14 @@
     "start": "07:15",
     "ende": "08:30",
     "minutes": 75
+  },
+  {
+    "id": "e17913652047231wao5",
+    "datum": "2026-10-07",
+    "auftrag": "26097148",
+    "taetigkeit": "35011, 37334 Web-Daten",
+    "start": "10:45",
+    "ende": "11:30",
+    "minutes": 45
   }
 ]
