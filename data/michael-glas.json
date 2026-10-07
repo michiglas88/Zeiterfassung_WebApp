@@ -2009,5 +2009,14 @@
     "start": "10:45",
     "ende": "16:15",
     "minutes": 330
+  },
+  {
+    "id": "e179138381900067peq",
+    "datum": "2026-10-07",
+    "auftrag": "26107169",
+    "taetigkeit": "Korrekturen",
+    "start": "08:30",
+    "ende": "08:45",
+    "minutes": 15
   }
 ]
