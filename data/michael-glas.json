@@ -2036,5 +2036,14 @@
     "start": "14:45",
     "ende": "16:45",
     "minutes": 120
+  },
+  {
+    "id": "e17913841328068anxa",
+    "datum": "2026-10-07",
+    "auftrag": "26087125",
+    "taetigkeit": "Telefonat Korrektuern aufnehme",
+    "start": "14:15",
+    "ende": "15:00",
+    "minutes": 45
   }
 ]
