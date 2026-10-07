@@ -2045,5 +2045,14 @@
     "start": "16:30",
     "ende": "16:45",
     "minutes": 15
+  },
+  {
+    "id": "e1791385112559knnz2",
+    "datum": "2026-10-07",
+    "auftrag": "26087125",
+    "taetigkeit": "Neustart Aufbau",
+    "start": "16:45",
+    "ende": "17:00",
+    "minutes": 15
   }
 ]
