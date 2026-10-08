@@ -2063,5 +2063,14 @@
     "start": "07:30",
     "ende": "08:00",
     "minutes": 30
+  },
+  {
+    "id": "e1791471280641cw4w8",
+    "datum": "2026-10-08",
+    "auftrag": "26087125",
+    "taetigkeit": "Neustart Aufbau, Bilder Suche",
+    "start": "08:00",
+    "ende": "17:00",
+    "minutes": 540
   }
 ]
