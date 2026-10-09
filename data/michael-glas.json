@@ -2072,5 +2072,14 @@
     "start": "08:00",
     "ende": "17:00",
     "minutes": 540
+  },
+  {
+    "id": "e17915473497721l5yk",
+    "datum": "2026-10-09",
+    "auftrag": "26087125",
+    "taetigkeit": "Bilder Suche, Bildbearbeitung, Layout",
+    "start": "07:30",
+    "ende": "14:00",
+    "minutes": 390
   }
 ]
