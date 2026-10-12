@@ -2144,5 +2144,14 @@
     "start": "13:15",
     "ende": "13:45",
     "minutes": 30
+  },
+  {
+    "id": "e1791805533086t1f7x",
+    "datum": "2026-10-12",
+    "auftrag": "26087102",
+    "taetigkeit": "Datensammlung ÜS",
+    "start": "13:00",
+    "ende": "13:15",
+    "minutes": 15
   }
 ]
