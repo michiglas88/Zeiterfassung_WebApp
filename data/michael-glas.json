@@ -2162,5 +2162,14 @@
     "start": "13:45",
     "ende": "15:45",
     "minutes": 120
+  },
+  {
+    "id": "e1791814742139squ9j",
+    "datum": "2026-10-12",
+    "auftrag": "26087125",
+    "taetigkeit": "Korr aus Tele / Art.Nr./EAN pr",
+    "start": "15:45",
+    "ende": "16:15",
+    "minutes": 30
   }
 ]
