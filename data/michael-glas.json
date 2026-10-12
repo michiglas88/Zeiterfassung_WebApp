@@ -2126,5 +2126,14 @@
     "start": "11:30",
     "ende": "11:45",
     "minutes": 15
+  },
+  {
+    "id": "e1791802895625ntidm",
+    "datum": "2026-10-12",
+    "auftrag": "26107169",
+    "taetigkeit": "Korrekturen Neue Stanze",
+    "start": "11:45",
+    "ende": "13:00",
+    "minutes": 75
   }
 ]
