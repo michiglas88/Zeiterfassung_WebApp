@@ -2108,5 +2108,14 @@
     "start": "09:00",
     "ende": "09:30",
     "minutes": 30
+  },
+  {
+    "id": "e1791796907719m2i6c",
+    "datum": "2026-10-12",
+    "auftrag": "26087125",
+    "taetigkeit": "Neustart Aufbau, Neue Bilder bearb. platz.",
+    "start": "09:30",
+    "ende": "11:30",
+    "minutes": 120
   }
 ]
