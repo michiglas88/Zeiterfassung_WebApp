@@ -2135,5 +2135,14 @@
     "start": "11:45",
     "ende": "13:00",
     "minutes": 75
+  },
+  {
+    "id": "e1791805516479mxzl2",
+    "datum": "2026-10-12",
+    "auftrag": "26107169",
+    "taetigkeit": "Korrekturen task abschließen",
+    "start": "13:15",
+    "ende": "13:45",
+    "minutes": 30
   }
 ]
