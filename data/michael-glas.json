@@ -2117,5 +2117,14 @@
     "start": "09:30",
     "ende": "11:30",
     "minutes": 120
+  },
+  {
+    "id": "e1791798676230hwgzj",
+    "datum": "2026-10-12",
+    "auftrag": "INTERN",
+    "taetigkeit": "Acrobat Problem lösen",
+    "start": "11:30",
+    "ende": "11:45",
+    "minutes": 15
   }
 ]
