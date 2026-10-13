@@ -2189,5 +2189,14 @@
     "start": "07:30",
     "ende": "08:15",
     "minutes": 45
+  },
+  {
+    "id": "e1791886133320f5nx0",
+    "datum": "2026-10-13",
+    "auftrag": "26087125",
+    "taetigkeit": "Erneut neue Bilder suchen",
+    "start": "08:30",
+    "ende": "10:00",
+    "minutes": 90
   }
 ]
