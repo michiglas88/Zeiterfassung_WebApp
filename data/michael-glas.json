@@ -2171,5 +2171,14 @@
     "start": "15:45",
     "ende": "16:15",
     "minutes": 30
+  },
+  {
+    "id": "e17918731517136h0go",
+    "datum": "2026-10-13",
+    "auftrag": "26087102",
+    "taetigkeit": "Daten ÜS versenden",
+    "start": "08:15",
+    "ende": "08:30",
+    "minutes": 15
   }
 ]
