@@ -2225,5 +2225,14 @@
     "start": "12:45",
     "ende": "13:00",
     "minutes": 15
+  },
+  {
+    "id": "e1791900300459glipp",
+    "datum": "2026-10-13",
+    "auftrag": "INTERN",
+    "taetigkeit": "Absprache mit Christine",
+    "start": "13:30",
+    "ende": "13:45",
+    "minutes": 15
   }
 ]
