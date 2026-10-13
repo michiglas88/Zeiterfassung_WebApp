@@ -2234,5 +2234,14 @@
     "start": "13:30",
     "ende": "13:45",
     "minutes": 15
+  },
+  {
+    "id": "e17919003265486u34o",
+    "datum": "2026-10-13",
+    "auftrag": "26077046",
+    "taetigkeit": "Aufbau Label VS+RS 66725",
+    "start": "13:45",
+    "ende": "16:00",
+    "minutes": 135
   }
 ]
