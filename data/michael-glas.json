@@ -2198,5 +2198,14 @@
     "start": "08:30",
     "ende": "10:00",
     "minutes": 90
+  },
+  {
+    "id": "e1791888855356i3vfv",
+    "datum": "2026-10-13",
+    "auftrag": "ITERN",
+    "taetigkeit": "Zeiten schreiben",
+    "start": "12:00",
+    "ende": "12:30",
+    "minutes": 30
   }
 ]
