@@ -2207,5 +2207,14 @@
     "start": "12:00",
     "ende": "12:30",
     "minutes": 30
+  },
+  {
+    "id": "e17918897579151kqkd",
+    "datum": "2026-10-13",
+    "auftrag": "26107173",
+    "taetigkeit": "36511 RZ korr",
+    "start": "10:00",
+    "ende": "12:00",
+    "minutes": 120
   }
 ]
