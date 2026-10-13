@@ -2216,5 +2216,14 @@
     "start": "10:00",
     "ende": "12:00",
     "minutes": 120
+  },
+  {
+    "id": "e17919002882080b14d",
+    "datum": "2026-10-13",
+    "auftrag": "INTREN",
+    "taetigkeit": "WebFlow Einarbeitung",
+    "start": "12:45",
+    "ende": "13:00",
+    "minutes": 15
   }
 ]
