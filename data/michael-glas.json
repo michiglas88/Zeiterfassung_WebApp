@@ -2252,5 +2252,14 @@
     "start": "16:00",
     "ende": "16:30",
     "minutes": 30
+  },
+  {
+    "id": "e1791960570440a7d4n",
+    "datum": "2026-10-14",
+    "auftrag": "26107158",
+    "taetigkeit": "Korr + Finale Daten Erstellen",
+    "start": "07:45",
+    "ende": "08:45",
+    "minutes": 60
   }
 ]
