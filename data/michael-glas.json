@@ -2297,5 +2297,14 @@
     "start": "13:00",
     "ende": "14:45",
     "minutes": 105
+  },
+  {
+    "id": "e1791983272452r5vkw",
+    "datum": "2026-10-14",
+    "auftrag": "26077046",
+    "taetigkeit": "30130 Korr V3",
+    "start": "14:45",
+    "ende": "15:00",
+    "minutes": 15
   }
 ]
