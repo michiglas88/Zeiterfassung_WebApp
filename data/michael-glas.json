@@ -2261,5 +2261,14 @@
     "start": "07:45",
     "ende": "08:45",
     "minutes": 60
+  },
+  {
+    "id": "e179197217790937oki",
+    "datum": "2026-10-14",
+    "auftrag": "26077046",
+    "taetigkeit": "62870 Aufbau RS V1",
+    "start": "08:45",
+    "ende": "12:00",
+    "minutes": 195
   }
 ]
