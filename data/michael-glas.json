@@ -2270,5 +2270,14 @@
     "start": "08:45",
     "ende": "12:00",
     "minutes": 195
+  },
+  {
+    "id": "e17919737472816hx8r",
+    "datum": "2026-10-14",
+    "auftrag": "26077046",
+    "taetigkeit": "Druckdaten 66305",
+    "start": "12:00",
+    "ende": "12:30",
+    "minutes": 30
   }
 ]
