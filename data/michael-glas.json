@@ -2333,5 +2333,14 @@
     "start": "12:30",
     "ende": "14:00",
     "minutes": 90
+  },
+  {
+    "id": "e17920692126209uui0",
+    "datum": "2026-10-15",
+    "auftrag": "26097156",
+    "taetigkeit": "Korr. Kunde DE",
+    "start": "14:00",
+    "ende": "15:00",
+    "minutes": 60
   }
 ]
