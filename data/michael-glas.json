@@ -2351,5 +2351,14 @@
     "start": "15:00",
     "ende": "16:00",
     "minutes": 60
+  },
+  {
+    "id": "e1792074112827qyrb8",
+    "datum": "2026-10-15",
+    "auftrag": "INTERN",
+    "taetigkeit": "zeiten schreiben",
+    "start": "16:00",
+    "ende": "16:15",
+    "minutes": 15
   }
 ]
