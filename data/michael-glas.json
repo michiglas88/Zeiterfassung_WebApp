@@ -2342,5 +2342,14 @@
     "start": "14:00",
     "ende": "15:00",
     "minutes": 60
+  },
+  {
+    "id": "e1792073089751jnpo5",
+    "datum": "2026-10-15",
+    "auftrag": "26077046",
+    "taetigkeit": "66725 Korr. Label Back und Front",
+    "start": "15:00",
+    "ende": "16:00",
+    "minutes": 60
   }
 ]
