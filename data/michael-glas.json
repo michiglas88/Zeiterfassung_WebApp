@@ -2324,5 +2324,14 @@
     "start": "07:45",
     "ende": "12:30",
     "minutes": 285
+  },
+  {
+    "id": "e1792065311626flia1",
+    "datum": "2026-10-15",
+    "auftrag": "26097156",
+    "taetigkeit": "Korr. Kunde AT",
+    "start": "12:30",
+    "ende": "14:00",
+    "minutes": 90
   }
 ]
