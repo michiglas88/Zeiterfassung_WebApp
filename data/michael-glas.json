@@ -2423,5 +2423,14 @@
     "start": "13:00",
     "ende": "13:30",
     "minutes": 30
+  },
+  {
+    "id": "e1792152303772qg0h3",
+    "datum": "2026-10-16",
+    "auftrag": "26077046",
+    "taetigkeit": "62150 F-Daten Back",
+    "start": "13:30",
+    "ende": "13:45",
+    "minutes": 15
   }
 ]
