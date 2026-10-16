@@ -2360,5 +2360,14 @@
     "start": "16:00",
     "ende": "16:15",
     "minutes": 15
+  },
+  {
+    "id": "e1792130998591xf90n",
+    "datum": "2026-10-16",
+    "auftrag": "INTERN",
+    "taetigkeit": "Arbeitsorganisation Honybee",
+    "start": "07:45",
+    "ende": "08:15",
+    "minutes": 30
   }
 ]
