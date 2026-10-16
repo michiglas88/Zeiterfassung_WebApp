@@ -2414,5 +2414,14 @@
     "start": "12:45",
     "ende": "13:00",
     "minutes": 15
+  },
+  {
+    "id": "e17921502601109h080",
+    "datum": "2026-10-16",
+    "auftrag": "26077046",
+    "taetigkeit": "30130 F-Daten Front Label",
+    "start": "13:00",
+    "ende": "13:30",
+    "minutes": 30
   }
 ]
