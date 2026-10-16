@@ -2378,5 +2378,14 @@
     "start": "08:15",
     "ende": "11:00",
     "minutes": 165
+  },
+  {
+    "id": "e17921419662402ooca",
+    "datum": "2026-10-16",
+    "auftrag": "26077046",
+    "taetigkeit": "30130 Korrektur",
+    "start": "11:00",
+    "ende": "11:15",
+    "minutes": 15
   }
 ]
