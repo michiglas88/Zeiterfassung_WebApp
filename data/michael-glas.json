@@ -2540,5 +2540,14 @@
     "start": "11:00",
     "ende": "11:15",
     "minutes": 15
+  },
+  {
+    "id": "e1793096130880daypy",
+    "datum": "2026-10-27",
+    "auftrag": "26107169",
+    "taetigkeit": "7346 Finale Daten",
+    "start": "10:15",
+    "ende": "11:00",
+    "minutes": 45
   }
 ]
