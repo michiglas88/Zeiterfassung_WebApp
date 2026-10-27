@@ -2594,5 +2594,14 @@
     "start": "14:00",
     "ende": "16:30",
     "minutes": 150
+  },
+  {
+    "id": "e1793115839956gullp",
+    "datum": "2026-10-27",
+    "auftrag": "INTERN",
+    "taetigkeit": "Zeiten schreiben",
+    "start": "16:30",
+    "ende": "16:45",
+    "minutes": 15
   }
 ]
