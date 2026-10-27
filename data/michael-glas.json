@@ -2549,5 +2549,14 @@
     "start": "10:15",
     "ende": "11:00",
     "minutes": 45
+  },
+  {
+    "id": "e179309614811028cyv",
+    "datum": "2026-10-27",
+    "auftrag": "26077046",
+    "taetigkeit": "62710 Finale Daten",
+    "start": "10:00",
+    "ende": "10:15",
+    "minutes": 15
   }
 ]
