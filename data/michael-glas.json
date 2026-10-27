@@ -2504,5 +2504,14 @@
     "start": "09:00",
     "ende": "09:30",
     "minutes": 30
+  },
+  {
+    "id": "e1793091358573jjrvw",
+    "datum": "2026-10-27",
+    "auftrag": "INTERN",
+    "taetigkeit": "Arbeitsorga",
+    "start": "09:30",
+    "ende": "10:00",
+    "minutes": 30
   }
 ]
