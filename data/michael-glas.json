@@ -2540,5 +2540,14 @@
     "start": "10:00",
     "ende": "10:15",
     "minutes": 15
+  },
+  {
+    "id": "e17931011544957a6tk",
+    "datum": "2026-10-27",
+    "auftrag": "26107169",
+    "taetigkeit": "1300 Korrekturen",
+    "start": "11:15",
+    "ende": "12:30",
+    "minutes": 75
   }
 ]
