@@ -2585,5 +2585,14 @@
     "start": "13:45",
     "ende": "14:00",
     "minutes": 15
+  },
+  {
+    "id": "e1793115266078lwyrm",
+    "datum": "2026-10-27",
+    "auftrag": "26097148",
+    "taetigkeit": "73780,7378 Disp,84210 Web-Daten",
+    "start": "14:00",
+    "ende": "16:30",
+    "minutes": 150
   }
 ]
