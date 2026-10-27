@@ -2468,5 +2468,14 @@
     "start": "09:00",
     "ende": "17:00",
     "minutes": 480
+  },
+  {
+    "id": "e1793088363792u2gfo",
+    "datum": "2026-10-22",
+    "auftrag": "INTERN",
+    "taetigkeit": "URLAUB",
+    "start": "09:00",
+    "ende": "17:00",
+    "minutes": 480
   }
 ]
