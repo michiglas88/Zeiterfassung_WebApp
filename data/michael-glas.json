@@ -2486,5 +2486,14 @@
     "start": "09:00",
     "ende": "17:00",
     "minutes": 480
+  },
+  {
+    "id": "e1793088401471ul131",
+    "datum": "2026-10-26",
+    "auftrag": "INTERN",
+    "taetigkeit": "FEIERTAG",
+    "start": "09:00",
+    "ende": "17:00",
+    "minutes": 480
   }
 ]
