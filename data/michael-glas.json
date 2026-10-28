@@ -2666,5 +2666,14 @@
     "start": "13:45",
     "ende": "14:00",
     "minutes": 15
+  },
+  {
+    "id": "e1793199661539gsqna",
+    "datum": "2026-10-28",
+    "auftrag": "26097140",
+    "taetigkeit": "20456 Finale Daten",
+    "start": "13:30",
+    "ende": "13:45",
+    "minutes": 15
   }
 ]
