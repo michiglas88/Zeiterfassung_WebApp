@@ -2621,5 +2621,14 @@
     "start": "10:15",
     "ende": "11:15",
     "minutes": 60
+  },
+  {
+    "id": "e1793183291855gxsj5",
+    "datum": "2026-10-28",
+    "auftrag": "INTERN",
+    "taetigkeit": "Briefing SM Meisterstück",
+    "start": "11:15",
+    "ende": "11:30",
+    "minutes": 15
   }
 ]
