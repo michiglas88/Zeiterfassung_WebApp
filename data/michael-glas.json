@@ -2612,5 +2612,14 @@
     "start": "07:30",
     "ende": "10:15",
     "minutes": 165
+  },
+  {
+    "id": "e1793183275476s2fj6",
+    "datum": "2026-10-28",
+    "auftrag": "26097148",
+    "taetigkeit": "74512, 74512 UEK Web-Daten",
+    "start": "10:15",
+    "ende": "11:15",
+    "minutes": 60
   }
 ]
