@@ -2648,5 +2648,14 @@
     "start": "13:30",
     "ende": "13:45",
     "minutes": 15
+  },
+  {
+    "id": "e1793199613894yojvv",
+    "datum": "2026-10-28",
+    "auftrag": "26107178",
+    "taetigkeit": "Kreation / Layout",
+    "start": "14:15",
+    "ende": "16:00",
+    "minutes": 105
   }
 ]
