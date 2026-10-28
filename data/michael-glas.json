@@ -2603,5 +2603,14 @@
     "start": "16:30",
     "ende": "16:45",
     "minutes": 15
+  },
+  {
+    "id": "e1793178552682336by",
+    "datum": "2026-10-28",
+    "auftrag": "26097148",
+    "taetigkeit": "Flüssigdünger Web-Daten",
+    "start": "07:30",
+    "ende": "10:15",
+    "minutes": 165
   }
 ]
