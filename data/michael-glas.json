@@ -2684,5 +2684,14 @@
     "start": "07:30",
     "ende": "08:00",
     "minutes": 30
+  },
+  {
+    "id": "e1793285946313atghb",
+    "datum": "2026-10-29",
+    "auftrag": "26107178",
+    "taetigkeit": "Kreation / Layout",
+    "start": "08:00",
+    "ende": "16:00",
+    "minutes": 480
   }
 ]
