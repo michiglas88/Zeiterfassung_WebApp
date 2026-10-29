@@ -2702,14 +2702,5 @@
     "start": "07:00",
     "ende": "13:15",
     "minutes": 375
-  },
-  {
-    "id": "e17932860387520w8pw",
-    "datum": "2026-10-30",
-    "auftrag": "Test",
-    "taetigkeit": "Test",
-    "start": "13:15",
-    "ende": "14:15",
-    "minutes": 60
   }
 ]
