@@ -2693,5 +2693,14 @@
     "start": "08:00",
     "ende": "16:00",
     "minutes": 480
+  },
+  {
+    "id": "e1793365147628tstn5",
+    "datum": "2026-10-30",
+    "auftrag": "INTERN",
+    "taetigkeit": "Arbeitsorganisation / Zeitschreiben",
+    "start": "07:30",
+    "ende": "08:00",
+    "minutes": 30
   }
 ]
