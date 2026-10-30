@@ -2702,5 +2702,14 @@
     "start": "14:00",
     "ende": "16:00",
     "minutes": 120
+  },
+  {
+    "id": "e179336538976307b6q",
+    "datum": "2026-10-30",
+    "auftrag": "Intern",
+    "taetigkeit": "Zeitenschreiben",
+    "start": "14:00",
+    "ende": "14:15",
+    "minutes": 15
   }
 ]
