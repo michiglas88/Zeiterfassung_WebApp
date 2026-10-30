@@ -2711,5 +2711,14 @@
     "start": "14:00",
     "ende": "14:15",
     "minutes": 15
+  },
+  {
+    "id": "e1793365604205fc2e5",
+    "datum": "2026-10-27",
+    "auftrag": "Arzttermin",
+    "taetigkeit": "Zahnarzt",
+    "start": "07:58",
+    "ende": "08:41",
+    "minutes": 43
   }
 ]
