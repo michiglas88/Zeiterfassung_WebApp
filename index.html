@@ -137,7 +137,7 @@
 
   .entry-form{
     display:grid;
-    grid-template-columns: 1fr 1.3fr 1.3fr 0.8fr 0.8fr auto;
+    grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr) minmax(0,1.1fr) minmax(0,1.3fr) minmax(0,0.8fr) minmax(0,0.8fr) auto;
     gap: 14px;
     align-items: end;
   }
@@ -257,6 +257,26 @@
   }
   .del-btn:hover{ color: var(--minus); }
 
+  @media (max-width: 860px){
+    .entry-form{ grid-template-columns: 1fr 1fr; }
+  }
+
+  tbody tr.sick-row td:not(.total-cell){ background: var(--minus-bg); }
+
+  .wd-hint{ color: var(--accent); font-weight: 600; }
+
+  .form-hint{
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  .sick-hint{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+  }
+
   .empty-state{
     padding: 30px 10px;
     text-align: center;
@@ -366,7 +386,7 @@
 
   <nav class="tabs">
     <button class="tab-btn active" data-tab="zeit">Zeiterfassung</button>
-    <button class="tab-btn" data-tab="ueberstunden">Überstunden</button>
+    <button class="tab-btn" data-tab="auswertung">Auswertung</button>
     <button class="tab-btn" data-tab="daten">Daten &amp; Sicherung</button>
   </nav>
 
@@ -376,16 +396,20 @@
     <div class="card">
       <form class="entry-form" id="entryForm">
         <div class="field">
-          <label for="f-datum">Datum</label>
+          <label for="f-datum">Datum <span class="wd-hint" id="f-wd"></span></label>
           <input type="date" id="f-datum" required>
         </div>
         <div class="field">
-          <label for="f-auftrag">Auftrag</label>
-          <input type="text" id="f-auftrag" placeholder="z. B. Katalog Müller" required>
+          <label for="f-kunde">Kunde (optional)</label>
+          <input type="text" id="f-kunde" placeholder="z. B. Müller GmbH">
+        </div>
+        <div class="field">
+          <label for="f-auftrag">Auftrag (optional)</label>
+          <input type="text" id="f-auftrag" placeholder="z. B. Katalog Herbst">
         </div>
         <div class="field">
           <label for="f-taetigkeit">Tätigkeit</label>
-          <input type="text" id="f-taetigkeit" placeholder="z. B. Reinzeichnung Umschlag" required>
+          <input type="text" id="f-taetigkeit" placeholder="z. B. Reinzeichnung oder Krank">
         </div>
         <div class="field">
           <label for="f-start">Startzeit</label>
@@ -398,6 +422,7 @@
         <button type="submit" class="primary">Eintragen</button>
       </form>
       <div class="form-error" id="formError">Endzeit muss nach der Startzeit liegen.</div>
+      <div class="form-hint">Mindestens eines der Felder Kunde, Auftrag oder Tätigkeit muss ausgefüllt sein. Für Krankheitstage als Tätigkeit „Krank“ eintragen.</div>
     </div>
 
     <div class="card" style="padding:0; overflow-x:auto;">
@@ -405,6 +430,7 @@
         <thead>
           <tr>
             <th>Datum</th>
+            <th>Kunde</th>
             <th>Auftrag</th>
             <th>Tätigkeit</th>
             <th>Start</th>
@@ -421,8 +447,8 @@
     </div>
   </section>
 
-  <!-- TAB 2: Überstunden -->
-  <section class="panel" id="panel-ueberstunden">
+  <!-- TAB 2: Auswertung -->
+  <section class="panel" id="panel-auswertung">
 
     <div class="card balance-card">
       <div>
@@ -430,6 +456,31 @@
         <div class="value" id="balanceValue">0:00 h</div>
       </div>
       <div class="label" id="balanceContext">Basis: 40:00 h / Woche</div>
+    </div>
+
+    <div class="card">
+      <div class="balance-card">
+        <div>
+          <div class="label">Krankheitstage gesamt</div>
+          <div class="value" id="sickValue">0</div>
+        </div>
+        <div class="label" id="sickYears"></div>
+      </div>
+      <div class="sick-hint">Einträge mit der Tätigkeit „Krank“ werden hier automatisch als Krankheitstag gezählt (pro Kalendertag einmal). Die gebuchte Zeit zählt weiterhin zur Wochenarbeitszeit.</div>
+      <div id="sickTableWrap" style="overflow-x:auto; margin-top:14px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>KW</th>
+              <th class="num">Zeit</th>
+              <th>Tätigkeit</th>
+            </tr>
+          </thead>
+          <tbody id="sickTableBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="emptyStateSick">Noch keine Krankheitstage erfasst.</div>
     </div>
 
     <div class="card" style="padding:0; overflow-x:auto;">
@@ -441,6 +492,7 @@
             <th class="num">Wochenarbeitszeit</th>
             <th class="num">Differenz zu 40 h</th>
             <th class="num">Saldo kumuliert</th>
+            <th class="num">Krank</th>
           </tr>
         </thead>
         <tbody id="weekTableBody"></tbody>
@@ -598,6 +650,17 @@
     const d = new Date(iso + 'T00:00:00');
     return d.toLocaleDateString('de-AT', { day:'2-digit', month:'2-digit', year:'numeric' });
   }
+  const WEEKDAYS_SHORT = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+  function weekdayShort(iso){
+    return WEEKDAYS_SHORT[new Date(iso + 'T00:00:00').getDay()];
+  }
+  function fmtDateWd(iso){
+    return weekdayShort(iso) + ' ' + fmtDate(iso);
+  }
+  // Krankheitstag: Tätigkeit beginnt mit "Krank" (z. B. "Krank", "Krankenstand")
+  function isSickEntry(e){
+    return /^\s*krank/i.test(e.taetigkeit || '');
+  }
   function fmtDateShort(d){
     return d.toLocaleDateString('de-AT', { day:'2-digit', month:'2-digit' });
   }
@@ -630,11 +693,14 @@
       dayTotals[e.datum] = (dayTotals[e.datum] || 0) + e.minutes;
     });
 
+    const sickDates = new Set(sorted.filter(isSickEntry).map(e => e.datum));
+
     const weekTotals = {};
     Object.keys(dayTotals).forEach(datum => {
       const wi = isoWeekInfo(datum);
-      if(!weekTotals[wi.key]) weekTotals[wi.key] = { minutes: 0, year: wi.year, week: wi.week, monday: wi.monday, sunday: wi.sunday };
+      if(!weekTotals[wi.key]) weekTotals[wi.key] = { minutes: 0, sickDays: 0, year: wi.year, week: wi.week, monday: wi.monday, sunday: wi.sunday };
       weekTotals[wi.key].minutes += dayTotals[datum];
+      if(sickDates.has(datum)) weekTotals[wi.key].sickDays += 1;
     });
 
     return { sorted, dayTotals, weekTotals };
@@ -680,10 +746,12 @@
 
       const tr = document.createElement('tr');
       if(isNewWeekGroup) tr.classList.add('week-start');
+      if(isSickEntry(e)) tr.classList.add('sick-row');
 
       tr.innerHTML = `
-        <td>${isNewDayGroup ? fmtDate(e.datum) : ''}</td>
-        <td class="job-cell">${escapeHtml(e.auftrag)}</td>
+        <td>${isNewDayGroup ? fmtDateWd(e.datum) : ''}</td>
+        <td class="job-cell">${escapeHtml(e.kunde || '')}</td>
+        <td class="job-cell">${escapeHtml(e.auftrag || '')}</td>
         <td class="job-cell">${escapeHtml(e.taetigkeit || '')}</td>
         <td>${e.start}</td>
         <td>${e.ende}</td>
@@ -730,6 +798,7 @@
         <td class="num">${fmtDur(row.minutes)}</td>
         <td class="num"><span class="pill ${diffPillClass}">${row.diff >= 0 ? '+' : ''}${fmtDur(row.diff)}</span></td>
         <td class="num"><span class="pill ${cumPillClass}">${row.cumulative >= 0 ? '+' : ''}${fmtDur(row.cumulative)}</span></td>
+        <td class="num">${row.sickDays ? row.sickDays : '–'}</td>
       `;
       body.appendChild(tr);
     });
@@ -746,9 +815,48 @@
     return div.innerHTML;
   }
 
+  // ---------- Rendering: Krankheitstage ----------
+  function renderSick(){
+    const { sorted } = computeGrouped();
+    const sickByDate = {};
+    sorted.filter(isSickEntry).forEach(e => {
+      if(!sickByDate[e.datum]) sickByDate[e.datum] = { minutes: 0, notes: [] };
+      sickByDate[e.datum].minutes += e.minutes;
+      const note = (e.taetigkeit || '').trim();
+      if(note && sickByDate[e.datum].notes.indexOf(note) === -1) sickByDate[e.datum].notes.push(note);
+    });
+
+    const dates = Object.keys(sickByDate).sort().reverse();
+    const body = document.getElementById('sickTableBody');
+    body.innerHTML = '';
+
+    document.getElementById('sickValue').textContent = dates.length;
+
+    const byYear = {};
+    dates.forEach(d => { const y = d.slice(0,4); byYear[y] = (byYear[y] || 0) + 1; });
+    document.getElementById('sickYears').textContent =
+      Object.keys(byYear).sort().reverse().map(y => y + ': ' + byYear[y]).join(' · ');
+
+    document.getElementById('emptyStateSick').style.display = dates.length ? 'none' : 'block';
+    document.getElementById('sickTableWrap').style.display = dates.length ? 'block' : 'none';
+
+    dates.forEach(d => {
+      const wi = isoWeekInfo(d);
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${fmtDateWd(d)}</td>
+        <td>KW ${wi.week} / ${wi.year}</td>
+        <td class="num">${fmtDur(sickByDate[d].minutes)}</td>
+        <td class="job-cell">${escapeHtml(sickByDate[d].notes.join(', '))}</td>
+      `;
+      body.appendChild(tr);
+    });
+  }
+
   function renderAll(){
     renderEntryTable();
     renderWeekTable();
+    renderSick();
     populateWeekSelect();
   }
 
@@ -775,13 +883,19 @@
   document.getElementById('entryForm').addEventListener('submit', function(ev){
     ev.preventDefault();
     const datum = document.getElementById('f-datum').value;
+    const kunde = document.getElementById('f-kunde').value.trim();
     const auftrag = document.getElementById('f-auftrag').value.trim();
     const taetigkeit = document.getElementById('f-taetigkeit').value.trim();
     const start = document.getElementById('f-start').value;
     const ende = document.getElementById('f-ende').value;
     const errorEl = document.getElementById('formError');
 
-    if(!datum || !auftrag || !taetigkeit || !start || !ende){ return; }
+    if(!datum || !start || !ende){ return; }
+    if(!kunde && !auftrag && !taetigkeit){
+      errorEl.textContent = 'Bitte mindestens eines der Felder Kunde, Auftrag oder Tätigkeit ausfüllen.';
+      errorEl.style.display = 'block';
+      return;
+    }
     if(toMinutes(ende) === toMinutes(start)){
       errorEl.textContent = 'Start- und Endzeit dürfen nicht identisch sein.';
       errorEl.style.display = 'block';
@@ -791,13 +905,14 @@
 
     entries.push({
       id: 'e' + Date.now() + Math.random().toString(36).slice(2,7),
-      datum, auftrag, taetigkeit, start, ende
+      datum, kunde, auftrag, taetigkeit, start, ende
     });
     saveEntries(true);
     renderAll();
     this.reset();
     document.getElementById('f-datum').value = datum;
-    document.getElementById('f-auftrag').focus();
+    updateWdHint();
+    document.getElementById('f-kunde').focus();
   });
 
   // ---------- Tabs ----------
@@ -1055,8 +1170,9 @@
       const isNewDay = e.datum !== lastDate;
       lastDate = e.datum;
       return [
-        isNewDay ? fmtDate(e.datum) : '',
-        e.auftrag,
+        isNewDay ? fmtDateWd(e.datum) : '',
+        e.kunde || '',
+        e.auftrag || '',
         e.taetigkeit || '',
         e.start,
         e.ende,
@@ -1068,9 +1184,13 @@
 
     doc.autoTable({
       startY: 86,
-      head: [['Datum','Auftrag','Tätigkeit','Start','Ende','Zeit','Tag gesamt','Woche gesamt']],
-      body: entryRows.length ? entryRows : [['–','–','–','–','–','–','–','–']],
-      styles: { font: 'helvetica', fontSize: 8, cellPadding: 4 },
+      head: [['Datum','Kunde','Auftrag','Tätigkeit','Start','Ende','Zeit','Tag gesamt','Woche gesamt']],
+      body: entryRows.length ? entryRows : [['–','–','–','–','–','–','–','–','–']],
+      styles: { font: 'helvetica', fontSize: 7.5, cellPadding: 3 },
+      columnStyles: {
+        0: { cellWidth: 64 }, 1: { cellWidth: 66 }, 2: { cellWidth: 66 }, 3: { cellWidth: 'auto' },
+        4: { cellWidth: 32 }, 5: { cellWidth: 32 }, 6: { cellWidth: 40 }, 7: { cellWidth: 50 }, 8: { cellWidth: 50 }
+      },
       headStyles: { fillColor: [43,69,112], textColor: 255 },
       alternateRowStyles: { fillColor: [246,244,238] }
     });
@@ -1093,13 +1213,14 @@
       fmtDateShort(r.monday) + ' – ' + fmtDateShort(r.sunday),
       fmtDur(r.minutes),
       (r.diff >= 0 ? '+' : '') + fmtDur(r.diff),
-      (r.cumulative >= 0 ? '+' : '') + fmtDur(r.cumulative)
+      (r.cumulative >= 0 ? '+' : '') + fmtDur(r.cumulative),
+      r.sickDays ? String(r.sickDays) : '–'
     ]);
 
     doc.autoTable({
       startY: y2 + 8,
-      head: [['KW','Zeitraum','Wochenarbeitszeit','Differenz zu 40h','Saldo kumuliert']],
-      body: weekTableRows.length ? weekTableRows : [['–','–','–','–','–']],
+      head: [['KW','Zeitraum','Wochenarbeitszeit','Differenz zu 40h','Saldo kumuliert','Krank']],
+      body: weekTableRows.length ? weekTableRows : [['–','–','–','–','–','–']],
       styles: { font: 'helvetica', fontSize: 8.5, cellPadding: 4 },
       headStyles: { fillColor: [43,69,112], textColor: 255 },
       alternateRowStyles: { fillColor: [246,244,238] }
@@ -1112,8 +1233,13 @@
     doc.setFontSize(12);
     doc.text('Aktueller Stand Überstundenkonto (gesamt): ' + (finalCumulative >= 0 ? '+' : '') + fmtDur(finalCumulative), 40, y3);
 
+    const sickCount = shownWeekRows.reduce((sum, r) => sum + (r.sickDays || 0), 0);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.text('Krankheitstage ' + (selectedWeekKey === 'all' ? '(gesamt)' : '(diese Woche)') + ': ' + sickCount, 40, y3 + 16);
+
     // ---------- Unterschriftenfeld ----------
-    let ySig = y3 + 46;
+    let ySig = y3 + 62;
     if(ySig > 760){ doc.addPage(); ySig = 60; }
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9);
@@ -1128,6 +1254,13 @@
     const nameSlug = staffName ? slugify(staffName) : 'unbenannt';
     doc.save('stundenzettel_' + nameSlug + '_' + weekLabelForFile + '.pdf');
   });
+
+  // ---------- Wochentag-Hinweis im Formular ----------
+  function updateWdHint(){
+    const v = document.getElementById('f-datum').value;
+    document.getElementById('f-wd').textContent = v ? '(' + weekdayShort(v) + ')' : '';
+  }
+  document.getElementById('f-datum').addEventListener('input', updateWdHint);
 
   // ---------- Mitarbeitername ----------
   const todayLabelEl = document.getElementById('todayLabel');
@@ -1153,6 +1286,7 @@
 
   // ---------- Init ----------
   document.getElementById('f-datum').value = new Date().toISOString().slice(0,10);
+  updateWdHint();
   staffNameInput.value = loadStaffName();
   updateTodayLabel();
   fillGhForm(ghConfig);
