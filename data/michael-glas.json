@@ -2752,35 +2752,5 @@
     "start": "07:30",
     "ende": "15:30",
     "minutes": 480
-  },
-  {
-    "id": "e1793709608905do7l6",
-    "datum": "2026-11-04",
-    "kunde": "",
-    "auftrag": "",
-    "taetigkeit": "TEST",
-    "start": "07:30",
-    "ende": "16:30",
-    "minutes": 540
-  },
-  {
-    "id": "e1793709627820jj7g4",
-    "datum": "2026-11-05",
-    "kunde": "",
-    "auftrag": "",
-    "taetigkeit": "TEST",
-    "start": "07:30",
-    "ende": "16:00",
-    "minutes": 510
-  },
-  {
-    "id": "e17937096807712w0w2",
-    "datum": "2026-11-06",
-    "kunde": "",
-    "auftrag": "",
-    "taetigkeit": "test",
-    "start": "07:30",
-    "ende": "13:30",
-    "minutes": 360
   }
 ]
