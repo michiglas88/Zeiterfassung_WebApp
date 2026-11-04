@@ -2792,5 +2792,15 @@
     "start": "07:30",
     "ende": "16:00",
     "minutes": 510
+  },
+  {
+    "id": "e1793804841787x92p3",
+    "datum": "2026-11-06",
+    "kunde": "",
+    "auftrag": "",
+    "taetigkeit": "Test",
+    "start": "07:30",
+    "ende": "14:00",
+    "minutes": 390
   }
 ]
