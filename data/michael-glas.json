@@ -2772,5 +2772,15 @@
     "start": "09:30",
     "ende": "12:00",
     "minutes": 150
+  },
+  {
+    "id": "e1793804810734ukgk2",
+    "datum": "2026-11-04",
+    "kunde": "SM",
+    "auftrag": "26107178",
+    "taetigkeit": "Kreation / Layout",
+    "start": "12:00",
+    "ende": "16:15",
+    "minutes": 255
   }
 ]
