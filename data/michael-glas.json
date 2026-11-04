@@ -2752,5 +2752,15 @@
     "start": "07:30",
     "ende": "15:30",
     "minutes": 480
+  },
+  {
+    "id": "e1793780565501845dy",
+    "datum": "2026-11-04",
+    "kunde": "SM",
+    "auftrag": "26107178",
+    "taetigkeit": "KKreation / Layout",
+    "start": "07:30",
+    "ende": "09:30",
+    "minutes": 120
   }
 ]
