@@ -2762,5 +2762,15 @@
     "start": "07:30",
     "ende": "09:30",
     "minutes": 120
+  },
+  {
+    "id": "e1793789554272awpfo",
+    "datum": "2026-11-04",
+    "kunde": "SKA",
+    "auftrag": "26097137",
+    "taetigkeit": "Ladenfolder Wertach",
+    "start": "09:30",
+    "ende": "12:00",
+    "minutes": 150
   }
 ]
