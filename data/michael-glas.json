@@ -2802,5 +2802,25 @@
     "start": "07:30",
     "ende": "13:45",
     "minutes": 375
+  },
+  {
+    "id": "e1794238612480zt7qv",
+    "datum": "2026-11-09",
+    "kunde": "SM",
+    "auftrag": "26107178",
+    "taetigkeit": "Kreation/Layout",
+    "start": "07:30",
+    "ende": "16:30",
+    "minutes": 540
+  },
+  {
+    "id": "e1794293509400cypyj",
+    "datum": "2026-11-10",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Arbeitsorga",
+    "start": "07:30",
+    "ende": "07:45",
+    "minutes": 15
   }
 ]
