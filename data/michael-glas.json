@@ -2822,5 +2822,15 @@
     "start": "07:30",
     "ende": "07:45",
     "minutes": 15
+  },
+  {
+    "id": "e17943243256207n603",
+    "datum": "2026-11-10",
+    "kunde": "SM",
+    "auftrag": "26107178",
+    "taetigkeit": "Kreation / Layout / 3D / Abstimmung",
+    "start": "07:45",
+    "ende": "16:30",
+    "minutes": 525
   }
 ]
