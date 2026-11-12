@@ -2912,5 +2912,15 @@
     "start": "14:15",
     "ende": "15:45",
     "minutes": 90
+  },
+  {
+    "id": "e1794494416199by4qm",
+    "datum": "2026-11-13",
+    "kunde": "",
+    "auftrag": "",
+    "taetigkeit": "Test",
+    "start": "07:30",
+    "ende": "13:00",
+    "minutes": 330
   }
 ]
