@@ -2902,15 +2902,5 @@
     "start": "13:45",
     "ende": "14:15",
     "minutes": 30
-  },
-  {
-    "id": "e17944951266038diif",
-    "datum": "2026-11-13",
-    "kunde": "SPAR",
-    "auftrag": "26117200",
-    "taetigkeit": "Korrekturen",
-    "start": "14:15",
-    "ende": "16:00",
-    "minutes": 105
   }
 ]
