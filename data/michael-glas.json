@@ -2842,5 +2842,15 @@
     "start": "07:30",
     "ende": "16:15",
     "minutes": 525
+  },
+  {
+    "id": "e17944699896128znsx",
+    "datum": "2026-11-12",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Arbeitorganisation",
+    "start": "07:30",
+    "ende": "08:15",
+    "minutes": 45
   }
 ]
