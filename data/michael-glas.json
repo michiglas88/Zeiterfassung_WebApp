@@ -2872,5 +2872,15 @@
     "start": "11:45",
     "ende": "12:00",
     "minutes": 15
+  },
+  {
+    "id": "e17944824384131f92m",
+    "datum": "2026-11-12",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Abstimmung Martin",
+    "start": "12:00",
+    "ende": "12:15",
+    "minutes": 15
   }
 ]
