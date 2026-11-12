@@ -2882,5 +2882,15 @@
     "start": "12:00",
     "ende": "12:15",
     "minutes": 15
+  },
+  {
+    "id": "e1794487447917cdsuq",
+    "datum": "2026-11-12",
+    "kunde": "Lions",
+    "auftrag": "26117187",
+    "taetigkeit": "Programmheft Advent",
+    "start": "12:15",
+    "ende": "13:45",
+    "minutes": 90
   }
 ]
