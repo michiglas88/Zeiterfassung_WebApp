@@ -2892,5 +2892,15 @@
     "start": "12:15",
     "ende": "13:45",
     "minutes": 90
+  },
+  {
+    "id": "e1794488839801fmxj7",
+    "datum": "2026-11-12",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Abstimmung / Einarbeitung Spar mit Martin",
+    "start": "13:45",
+    "ende": "14:15",
+    "minutes": 30
   }
 ]
