@@ -2862,5 +2862,15 @@
     "start": "08:15",
     "ende": "11:45",
     "minutes": 210
+  },
+  {
+    "id": "e1794480805234ddmxc",
+    "datum": "2026-11-12",
+    "kunde": "SM",
+    "auftrag": "26107178",
+    "taetigkeit": "Abstimmung / Besprechung Präsentation",
+    "start": "11:45",
+    "ende": "12:00",
+    "minutes": 15
   }
 ]
