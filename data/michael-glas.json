@@ -2922,5 +2922,15 @@
     "start": "08:45",
     "ende": "13:00",
     "minutes": 255
+  },
+  {
+    "id": "e1794811087993mf5rg",
+    "datum": "2026-11-13",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Bespr. Weihnachtsfeier Signatur",
+    "start": "08:00",
+    "ende": "08:30",
+    "minutes": 30
   }
 ]
