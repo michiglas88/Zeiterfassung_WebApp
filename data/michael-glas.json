@@ -2982,5 +2982,15 @@
     "start": "07:45",
     "ende": "09:00",
     "minutes": 75
+  },
+  {
+    "id": "e1794823169915fo0hf",
+    "datum": "2026-11-16",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Animation Signatur Weihnachten / Neujahr",
+    "start": "09:30",
+    "ende": "11:00",
+    "minutes": 90
   }
 ]
