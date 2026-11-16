@@ -3002,5 +3002,15 @@
     "start": "11:45",
     "ende": "12:45",
     "minutes": 60
+  },
+  {
+    "id": "e1794839254797cpvep",
+    "datum": "2026-11-16",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Arbeitsorganisation/ Rechner Aufräumen",
+    "start": "12:45",
+    "ende": "13:15",
+    "minutes": 30
   }
 ]
