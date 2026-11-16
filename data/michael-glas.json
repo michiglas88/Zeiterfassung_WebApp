@@ -3012,5 +3012,15 @@
     "start": "12:45",
     "ende": "13:15",
     "minutes": 30
+  },
+  {
+    "id": "e1794842943259p5uiv",
+    "datum": "2026-11-16",
+    "kunde": "EGC",
+    "auftrag": "26117207",
+    "taetigkeit": "Bildrecherche / Aufbau",
+    "start": "13:15",
+    "ende": "16:30",
+    "minutes": 195
   }
 ]
