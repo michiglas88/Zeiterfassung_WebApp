@@ -2992,5 +2992,15 @@
     "start": "09:30",
     "ende": "11:00",
     "minutes": 90
+  },
+  {
+    "id": "e17948293532463kbug",
+    "datum": "2026-11-16",
+    "kunde": "EGC",
+    "auftrag": "26107160",
+    "taetigkeit": "Korr 18451,18461,18481",
+    "start": "11:45",
+    "ende": "12:45",
+    "minutes": 60
   }
 ]
