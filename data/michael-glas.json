@@ -3022,5 +3022,15 @@
     "start": "13:15",
     "ende": "16:30",
     "minutes": 195
+  },
+  {
+    "id": "e1794897287915u1wuc",
+    "datum": "2026-11-16",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Honybee / Arbeits Übernahme Christine",
+    "start": "11:00",
+    "ende": "11:30",
+    "minutes": 30
   }
 ]
