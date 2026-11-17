@@ -3072,5 +3072,15 @@
     "start": "08:45",
     "ende": "09:00",
     "minutes": 15
+  },
+  {
+    "id": "e1794903424670ae0lb",
+    "datum": "2026-11-17",
+    "kunde": "EGC",
+    "auftrag": "23.045651",
+    "taetigkeit": "Korrekturen",
+    "start": "09:00",
+    "ende": "09:15",
+    "minutes": 15
   }
 ]
