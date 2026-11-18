@@ -3102,5 +3102,15 @@
     "start": "07:30",
     "ende": "09:45",
     "minutes": 135
+  },
+  {
+    "id": "e1794999034699s5tf2",
+    "datum": "2026-11-18",
+    "kunde": "Lions",
+    "auftrag": "26117187",
+    "taetigkeit": "Satz / Korrekturen",
+    "start": "09:45",
+    "ende": "12:00",
+    "minutes": 135
   }
 ]
