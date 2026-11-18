@@ -3112,5 +3112,15 @@
     "start": "09:45",
     "ende": "12:00",
     "minutes": 135
+  },
+  {
+    "id": "e1795007553542pcszo",
+    "datum": "2026-11-18",
+    "kunde": "SPAR",
+    "auftrag": "26117200",
+    "taetigkeit": "Korrekturen",
+    "start": "12:00",
+    "ende": "12:15",
+    "minutes": 15
   }
 ]
