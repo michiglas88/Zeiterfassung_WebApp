@@ -3122,5 +3122,15 @@
     "start": "12:00",
     "ende": "12:15",
     "minutes": 15
+  },
+  {
+    "id": "e1795007661887fxie9",
+    "datum": "2026-11-18",
+    "kunde": "Lions",
+    "auftrag": "26117187",
+    "taetigkeit": "Satz",
+    "start": "13:30",
+    "ende": "14:00",
+    "minutes": 30
   }
 ]
