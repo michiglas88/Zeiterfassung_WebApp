@@ -3172,5 +3172,15 @@
     "start": "07:45",
     "ende": "08:00",
     "minutes": 15
+  },
+  {
+    "id": "e17950723029803o4fb",
+    "datum": "2026-11-19",
+    "kunde": "Lions",
+    "auftrag": "26117187",
+    "taetigkeit": "Korrekturen",
+    "start": "08:00",
+    "ende": "08:15",
+    "minutes": 15
   }
 ]
