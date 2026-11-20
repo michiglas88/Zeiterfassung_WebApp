@@ -3272,5 +3272,15 @@
     "start": "10:30",
     "ende": "12:00",
     "minutes": 90
+  },
+  {
+    "id": "e17951733704609cj6s",
+    "datum": "2026-11-20",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Pflanzendienst",
+    "start": "12:00",
+    "ende": "12:15",
+    "minutes": 15
   }
 ]
