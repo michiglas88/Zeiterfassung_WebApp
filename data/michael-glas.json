@@ -3252,5 +3252,15 @@
     "start": "08:30",
     "ende": "10:00",
     "minutes": 90
+  },
+  {
+    "id": "e1795167135331l53bx",
+    "datum": "2026-11-20",
+    "kunde": "EGC",
+    "auftrag": "26117207",
+    "taetigkeit": "Bildsuche / Kreation / Layout",
+    "start": "10:00",
+    "ende": "10:30",
+    "minutes": 30
   }
 ]
