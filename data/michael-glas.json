@@ -3262,5 +3262,15 @@
     "start": "10:00",
     "ende": "10:30",
     "minutes": 30
+  },
+  {
+    "id": "e1795172826593w1asx",
+    "datum": "2026-11-20",
+    "kunde": "EGC",
+    "auftrag": "26097148",
+    "taetigkeit": "Web-Daten 62870,62160",
+    "start": "10:30",
+    "ende": "12:00",
+    "minutes": 90
   }
 ]
