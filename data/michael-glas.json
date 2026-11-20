@@ -3212,5 +3212,15 @@
     "start": "13:45",
     "ende": "16:30",
     "minutes": 165
+  },
+  {
+    "id": "e179515645216358cka",
+    "datum": "2026-11-19",
+    "kunde": "Lions",
+    "auftrag": "26117207",
+    "taetigkeit": "Korr. / Druckdaten",
+    "start": "14:00",
+    "ende": "14:15",
+    "minutes": 15
   }
 ]
