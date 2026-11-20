@@ -3222,5 +3222,15 @@
     "start": "14:00",
     "ende": "14:15",
     "minutes": 15
+  },
+  {
+    "id": "e1795156474045qwj9k",
+    "datum": "2026-11-19",
+    "kunde": "EGC",
+    "auftrag": "26117207",
+    "taetigkeit": "Kreation / Layout / Satz",
+    "start": "14:00",
+    "ende": "16:30",
+    "minutes": 150
   }
 ]
