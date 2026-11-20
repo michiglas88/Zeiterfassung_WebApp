@@ -3222,5 +3222,15 @@
     "start": "14:00",
     "ende": "16:30",
     "minutes": 150
+  },
+  {
+    "id": "e1795157572322qq99q",
+    "datum": "2026-11-20",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Zeiten schreiben",
+    "start": "07:30",
+    "ende": "08:00",
+    "minutes": 30
   }
 ]
