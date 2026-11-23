@@ -3292,5 +3292,15 @@
     "start": "12:15",
     "ende": "13:15",
     "minutes": 60
+  },
+  {
+    "id": "e1795423235408dvack",
+    "datum": "2026-11-23",
+    "kunde": "EGC",
+    "auftrag": "26097148",
+    "taetigkeit": "",
+    "start": "07:30",
+    "ende": "09:00",
+    "minutes": 90
   }
 ]
