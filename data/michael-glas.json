@@ -3372,5 +3372,15 @@
     "start": "16:00",
     "ende": "16:15",
     "minutes": 15
+  },
+  {
+    "id": "e1795534747392ohuxm",
+    "datum": "2026-11-24",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Besprechung / Job Briefing",
+    "start": "16:15",
+    "ende": "16:30",
+    "minutes": 15
   }
 ]
