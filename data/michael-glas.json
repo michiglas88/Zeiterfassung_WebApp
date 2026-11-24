@@ -3382,5 +3382,15 @@
     "start": "16:15",
     "ende": "16:30",
     "minutes": 15
+  },
+  {
+    "id": "e1795536082378x9zng",
+    "datum": "2026-11-24",
+    "kunde": "KAESE REBELLE",
+    "auftrag": "26117216",
+    "taetigkeit": "Satz / Aufbau",
+    "start": "16:30",
+    "ende": "17:00",
+    "minutes": 30
   }
 ]
