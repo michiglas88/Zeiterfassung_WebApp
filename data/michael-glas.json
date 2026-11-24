@@ -3352,5 +3352,15 @@
     "start": "10:00",
     "ende": "12:00",
     "minutes": 120
+  },
+  {
+    "id": "e1795530703500d60tw",
+    "datum": "2026-11-24",
+    "kunde": "Test",
+    "auftrag": "",
+    "taetigkeit": "",
+    "start": "12:00",
+    "ende": "16:30",
+    "minutes": 270
   }
 ]
