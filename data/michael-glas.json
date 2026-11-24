@@ -3362,5 +3362,15 @@
     "start": "12:00",
     "ende": "16:00",
     "minutes": 240
+  },
+  {
+    "id": "e1795532208084fbijt",
+    "datum": "2026-11-24",
+    "kunde": "INTERN",
+    "auftrag": "",
+    "taetigkeit": "Zeitenschreiben",
+    "start": "16:00",
+    "ende": "16:15",
+    "minutes": 15
   }
 ]
