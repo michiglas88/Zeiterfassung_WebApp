@@ -3352,5 +3352,15 @@
     "start": "10:00",
     "ende": "12:00",
     "minutes": 120
+  },
+  {
+    "id": "e17955318720925ym0e",
+    "datum": "2026-11-24",
+    "kunde": "SM",
+    "auftrag": "26117212",
+    "taetigkeit": "Gastrofolder EN",
+    "start": "12:00",
+    "ende": "16:00",
+    "minutes": 240
   }
 ]
