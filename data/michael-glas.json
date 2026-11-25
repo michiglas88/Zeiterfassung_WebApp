@@ -3392,5 +3392,15 @@
     "start": "16:30",
     "ende": "17:00",
     "minutes": 30
+  },
+  {
+    "id": "e1795593654937uw381",
+    "datum": "2026-11-25",
+    "kunde": "KR",
+    "auftrag": "26117216",
+    "taetigkeit": "Satz / Kreation",
+    "start": "07:30",
+    "ende": "09:00",
+    "minutes": 90
   }
 ]
