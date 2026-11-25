@@ -3392,25 +3392,5 @@
     "start": "16:30",
     "ende": "17:00",
     "minutes": 30
-  },
-  {
-    "id": "e1795588677402mha39",
-    "datum": "2026-11-25",
-    "kunde": "Test",
-    "auftrag": "",
-    "taetigkeit": "",
-    "start": "07:30",
-    "ende": "16:00",
-    "minutes": 510
-  },
-  {
-    "id": "e1795588696273x45yf",
-    "datum": "2026-11-25",
-    "kunde": "Test",
-    "auftrag": "",
-    "taetigkeit": "",
-    "start": "07:30",
-    "ende": "14:00",
-    "minutes": 390
   }
 ]
