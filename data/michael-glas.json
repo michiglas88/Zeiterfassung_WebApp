@@ -3402,5 +3402,15 @@
     "start": "07:30",
     "ende": "09:00",
     "minutes": 90
+  },
+  {
+    "id": "e17955945621633fbl3",
+    "datum": "2026-11-25",
+    "kunde": "SM",
+    "auftrag": "26117212",
+    "taetigkeit": "Korrektur",
+    "start": "09:00",
+    "ende": "09:15",
+    "minutes": 15
   }
 ]
